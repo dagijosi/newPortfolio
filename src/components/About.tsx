@@ -1,6 +1,28 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { FaCogs, FaRocket, FaUsers } from "react-icons/fa";
 
 const About = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Animation triggers only once
+    threshold: 0.2, // Animation triggers when 20% of the component is visible
+  });
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, staggerChildren: 0.2 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   const features = [
     {
       icon: <FaCogs className="mr-3 text-xl" />,
@@ -23,7 +45,14 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="max-w-[85rem] py-32 px-8 relative overflow-hidden mx-auto">
+    <motion.section
+      ref={ref}
+      id="about"
+      className="max-w-[85rem] py-32 px-8 relative overflow-hidden mx-auto"
+      variants={containerVariants}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+    >
       <h2 className="text-polo-200 text-4xl mb-12 relative inline-block">
         About Me
         <span className="absolute bottom-[-10px] left-0 w-3/5 h-0.5 bg-gradient-to-r from-polo-500 to-transparent"></span>
@@ -62,9 +91,10 @@ const About = () => {
         </p>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div
+            <motion.div
               key={index}
               className="bg-gradient-to-br from-polo-900 to-polo-800 p-[2rem] rounded-2xl"
+              variants={itemVariants}
             >
               <h3 className="text-lg font-semibold mb-4 text-polo-200 flex items-center">
                 {feature.icon}
@@ -73,11 +103,11 @@ const About = () => {
               <p className="text-polo-300 leading-[1.6]">
                 {feature.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
