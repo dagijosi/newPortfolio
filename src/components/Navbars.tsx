@@ -49,7 +49,7 @@ const Navbars: React.FC = () => {
 
       {renderNavItems("text-polo-200 gap-10 font-medium text-lg")}
 
-      <NavMobile className="bg-gradient-to-br from-polo-500 to-polo-900">
+      <NavMobile className="bg-gradient-to-br from-polo-950 to-polo-900">
         <NavMobileBrand className="bg-gradient-to-r from-polo-200 to-polo-500 bg-clip-text text-transparent text-[1.75rem] font-bold">
           <a href="/" aria-label="Go to homepage">
             DagiPortfolio
