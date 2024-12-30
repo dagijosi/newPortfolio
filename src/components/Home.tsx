@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Home: React.FC = () => {
   return (
-    <div className="relative bg-gradient-to-r from-polo-950 to-polo-900 text-white flex flex-col md:flex-row justify-between items-center p-4 md:p-[2rem] gap-16 overflow-x-hidden">
+    <div id="home" className="relative bg-gradient-to-r from-polo-950 to-polo-900 text-white flex flex-col md:flex-row justify-between items-center p-4 md:p-[2rem] gap-16 overflow-x-hidden">
       {/* Left Section: Text */}
       <div className="max-w-2xl mx-auto text-left">
         <motion.h1

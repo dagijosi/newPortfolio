@@ -1,29 +1,29 @@
-import { FaCogs, FaRocket, FaUsers } from 'react-icons/fa';
+import { FaCogs, FaRocket, FaUsers } from "react-icons/fa";
 
 const About = () => {
   const features = [
     {
       icon: <FaCogs className="mr-3 text-xl" />,
-      title: 'Problem Solver',
+      title: "Problem Solver",
       description:
-        'Turning complex challenges into elegant solutions through creative thinking and technical expertise.',
+        "Turning complex challenges into elegant solutions through creative thinking and technical expertise.",
     },
     {
       icon: <FaRocket className="mr-3 text-xl" />,
-      title: 'Innovator',
+      title: "Innovator",
       description:
-        'Always exploring new technologies and approaches to build better digital experiences.',
+        "Always exploring new technologies and approaches to build better digital experiences.",
     },
     {
       icon: <FaUsers className="mr-3 text-xl" />,
-      title: 'Team Player',
+      title: "Team Player",
       description:
-        'Experienced in collaborating with cross-functional teams to deliver outstanding results.',
+        "Experienced in collaborating with cross-functional teams to deliver outstanding results.",
     },
   ];
 
   return (
-    <section className="max-w-[85rem] py-32 px-8 relative overflow-hidden mx-auto">
+    <section id="about" className="max-w-[85rem] py-32 px-8 relative overflow-hidden mx-auto">
       <h2 className="text-polo-200 text-4xl mb-12 relative inline-block">
         About Me
         <span className="absolute bottom-[-10px] left-0 w-3/5 h-0.5 bg-gradient-to-r from-polo-500 to-transparent"></span>
@@ -46,10 +46,19 @@ const About = () => {
       </svg>
       <div className="max-w-[65rem] mx-auto md:mx-14 ">
         <p className="text-[1.2rem] leading-[1.8] mb-[3rem] text-polo-200 text-pretty">
-          I'm a passionate full-stack developer with 5 years of experience
-          crafting web applications that make a difference. My journey in tech
-          started with a fascination for problem-solving and has evolved into a
-          career building intuitive, scalable solutions.
+          I'm Dagmawi Yosesph, a Full Stack Developer with a degree in Computer
+          Science from the HilCoE School of Science and Technology. Passionate
+          about creating innovative solutions, I specialize in building web and
+          mobile applications using technologies like React, Tailwind, and
+          Sequelize. With a strong foundation in both front-end and back-end
+          development, I enjoy working in teams or independently to deliver
+          high-quality projects. I am always eager to learn and improve, and I
+          have experience with tools like Axios, Redux, and JavaScript
+          frameworks. My goal is to bring concepts to life through code while
+          ensuring clean, efficient, and user-friendly solutions. Currently, I'm
+          focused on creating a website builder platform that allows users to
+          design responsive websites with ease, and I’m always exploring new
+          ways to enhance both the user and developer experience.
         </p>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
