@@ -131,7 +131,7 @@ export const NavItem: React.FC<NavItemProps> = ({
   const location = useLocation(); // Get current URL
   const isActive = location.pathname === href; // Check if the current path matches the href
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleClick = () => {
     if (onClick) onClick(); // Trigger custom onClick if provided
   };
 
@@ -309,7 +309,7 @@ export const NavMobileItem: React.FC<NavMobileItemProps> = ({
   const location = useLocation(); // Get current URL
   const isActive = location.pathname === href; // Check if the current path matches the href
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleClick = () => {
     if (onClick) onClick(); // Trigger custom onClick if provided
   };
 
