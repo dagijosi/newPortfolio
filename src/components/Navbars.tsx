@@ -47,7 +47,7 @@ const Navbars: React.FC = () => {
         </NavBrand>
       </NavLeft>
 
-      {renderNavItems("text-polo-200 gap-10 font-medium text-lg")}
+      {renderNavItems("text-polo-200 gap-10 font-medium ")}
 
       <NavMobile className="bg-gradient-to-br from-polo-950 to-polo-900">
         <NavMobileBrand className="bg-gradient-to-r from-polo-200 to-polo-500 bg-clip-text text-transparent text-[1.75rem] font-bold">

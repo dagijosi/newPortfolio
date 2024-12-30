@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { MdInfoOutline } from "react-icons/md";
 import { FaReact, FaNode, FaVuejs } from "react-icons/fa";
-import { SiMongodb, SiFirebase } from "react-icons/si";
+import { SiMongodb, SiFirebase, SiTailwindcss, SiNextdotjs, SiHtml5, SiJavascript, SiTypescript } from "react-icons/si";
 
 const Projects = () => {
   const skillIconMap: Record<string, JSX.Element> = {
@@ -12,6 +12,11 @@ const Projects = () => {
     "Vue.js": <FaVuejs />,
     MongoDB: <SiMongodb />,
     Firebase: <SiFirebase />,
+    Tailwind: <SiTailwindcss />,
+    Next: <SiNextdotjs />,
+    HTML: <SiHtml5/>,
+    JavaScript: <SiJavascript/>,
+    TypeScript: <SiTypescript/>
   };
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -34,21 +39,22 @@ const Projects = () => {
 
   const projects = [
     {
-      name: "E-commerce Platform",
+      name: "DMovies",
       description:
-        "A full-featured e-commerce platform built with React and Node.js",
-      skills: ["React", "Node.js", "MongoDB"],
+        "A comprehensive movie and TV series platform with advanced search, categorization, and personalized content discovery features.",
+      skills: ["React", "Tailwind", "JavaScript", "HTML"],
     },
     {
-      name: "Task Management App",
+      name: "Friend-Chat",
       description:
-        "A collaborative task management tool with real-time updates",
-      skills: ["Vue.js", "Firebase", "MongoDB"],
+        "A dynamic messaging platform allowing users to share text, files, emojis, and record audio conversations with a user-friendly interface.",
+      skills: ["React", "Tailwind", "JavaScript", "HTML"],
     },
     {
-      name: "Chat App",
-      description: "A real-time chat application for seamless communication",
-      skills: ["Vue.js", "Firebase", "MongoDB"],
+      name: "Eco-Web",
+      description:
+        "A user-centric eCommerce platform with secure login, detailed product catalog, multi-currency cart system, SEO optimization, and social media integration.",
+      skills: ["Next", "Tailwind", "JavaScript", "HTML"],
     },
   ];
 
