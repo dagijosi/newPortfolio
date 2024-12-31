@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { MdInfoOutline } from "react-icons/md";
-import { FaReact, FaNode, FaVuejs } from "react-icons/fa";
+import { FaReact, FaNode, FaVuejs, FaRecycle } from "react-icons/fa";
 import {
   SiMongodb,
   SiFirebase,
@@ -10,6 +10,8 @@ import {
   SiHtml5,
   SiJavascript,
   SiTypescript,
+  SiLaravel,
+  SiReactquery,
 } from "react-icons/si";
 
 export const skillIconMap: Record<string, JSX.Element> = {
@@ -23,6 +25,9 @@ export const skillIconMap: Record<string, JSX.Element> = {
   HTML: <SiHtml5 />,
   JavaScript: <SiJavascript />,
   TypeScript: <SiTypescript />,
+  Laravel: <SiLaravel />,
+  "React Query": <SiReactquery />,  // React Query Icon
+  "React Saga": <FaRecycle />,     // React Saga Icon
 };
 
 const Projects = () => {
@@ -64,7 +69,32 @@ const Projects = () => {
         "A user-centric eCommerce platform with secure login, detailed product catalog, multi-currency cart system, SEO optimization, and social media integration.",
       skills: ["Next", "Tailwind", "JavaScript", "HTML"],
     },
+    {
+      name: "DagiComponents",
+      description:
+        "DagiComponents is a modern, responsive component library that makes building beautiful React applications faster and easier. Enjoy seamless integration, extensive customization options, and optimized performance for a delightful development experience.",
+      skills: ["React", "TypeScript", "Tailwind"],
+    },
+    {
+      name: "ET-Coffee-EUDR",
+      description:
+        "An application built to address the EU Deforestation Regulation (EUDR), leveraging React, TypeScript, Node.js, Tailwind CSS, and React Saga for optimal performance.",
+      skills: ["React", "TypeScript", "Node.js", "Tailwind", "React Saga"],
+    },
+    {
+      name: "Bean Scene",
+      description:
+        "A coffee shop landing page designed with a modern, responsive layout, featuring smooth animations and a user-friendly interface.",
+      skills: ["React", "Tailwind", "TypeScript"],
+    },
+    {
+      name: "Tree Based Restoration Registry",
+      description:
+        "A platform to register and track deforested regions in Ethiopia, supporting tree-based restoration efforts with a comprehensive data management system.",
+      skills: ["React", "JavaScript", "React Query", "Tailwind", "Laravel"],
+    },
   ];
+  
 
   return (
     <motion.section
