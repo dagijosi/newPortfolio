@@ -2,21 +2,30 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { MdInfoOutline } from "react-icons/md";
 import { FaReact, FaNode, FaVuejs } from "react-icons/fa";
-import { SiMongodb, SiFirebase, SiTailwindcss, SiNextdotjs, SiHtml5, SiJavascript, SiTypescript } from "react-icons/si";
+import {
+  SiMongodb,
+  SiFirebase,
+  SiTailwindcss,
+  SiNextdotjs,
+  SiHtml5,
+  SiJavascript,
+  SiTypescript,
+} from "react-icons/si";
+
+export const skillIconMap: Record<string, JSX.Element> = {
+  React: <FaReact />,
+  "Node.js": <FaNode />,
+  "Vue.js": <FaVuejs />,
+  MongoDB: <SiMongodb />,
+  Firebase: <SiFirebase />,
+  Tailwind: <SiTailwindcss />,
+  Next: <SiNextdotjs />,
+  HTML: <SiHtml5 />,
+  JavaScript: <SiJavascript />,
+  TypeScript: <SiTypescript />,
+};
 
 const Projects = () => {
-  const skillIconMap: Record<string, JSX.Element> = {
-    React: <FaReact />,
-    "Node.js": <FaNode />,
-    "Vue.js": <FaVuejs />,
-    MongoDB: <SiMongodb />,
-    Firebase: <SiFirebase />,
-    Tailwind: <SiTailwindcss />,
-    Next: <SiNextdotjs />,
-    HTML: <SiHtml5/>,
-    JavaScript: <SiJavascript/>,
-    TypeScript: <SiTypescript/>
-  };
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.2,
