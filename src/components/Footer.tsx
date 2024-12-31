@@ -9,7 +9,7 @@ import {
   AiFillTwitterCircle,
 } from "react-icons/ai";
 import { BsFillPinMapFill } from "react-icons/bs";
-import { FiX, FiChevronUp } from "react-icons/fi";
+import { FiChevronUp } from "react-icons/fi";
 
 const Footer = () => {
   // Quick Links and Social Media Links data
