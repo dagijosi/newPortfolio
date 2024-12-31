@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Home: React.FC = () => {
   return (
-    <div id="home" className="relative bg-gradient-to-r from-polo-950 to-polo-900 text-white flex flex-col md:flex-row justify-between items-center p-4 md:p-[2rem] gap-16 overflow-x-hidden">
+    <div id="home" className="relative bg-gradient-to-r from-polo-950 to-polo-900 text-white flex flex-col md:flex-row justify-between items-center p-4 md:p-[2rem] md:pb-0 gap-16 overflow-x-hidden">
       {/* Left Section: Text */}
       <div className="max-w-2xl mx-auto text-left">
         <motion.h1
@@ -41,7 +41,7 @@ const Home: React.FC = () => {
       <motion.img
         src="image/pic2.png"
         alt="A developer showcasing their work on a laptop screen"
-        className="w-full max-w-lg h-[36rem] flex-shrink-0 mt-8 md:mt-0 rounded-lg shadow-md z-10"
+        className="w-full max-w-lg h-[38rem] flex-shrink-0 mt-8 md:mt-0 rounded-lg shadow-md z-10"
         loading="lazy"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
