@@ -1,6 +1,7 @@
 import "./App.css";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Navbars from "./components/Navbars";
 import Projects from "./components/Projects";
@@ -15,6 +16,7 @@ function App() {
       <Projects/>
       <Skill/>
       <Contact/>
+      <Footer/>
     </div>
   );
 }
