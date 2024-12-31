@@ -31,6 +31,7 @@ const Home: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
+          onClick={() => window.location.href = '#projects'}
         >
           View My Work
         </motion.button>

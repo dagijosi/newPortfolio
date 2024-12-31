@@ -21,8 +21,8 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { href: "https://linkedin.com", icon: AiFillLinkedin, label: "LinkedIn Profile" },
-    { href: "https://github.com", icon: AiFillGithub, label: "GitHub Profile" },
+    { href: "https://www.linkedin.com/in/dagmawi-yoseph-4b4aa6296", icon: AiFillLinkedin, label: "LinkedIn Profile" },
+    { href: "https://github.com/dagijosi", icon: AiFillGithub, label: "GitHub Profile" },
     { href: "https://twitter.com", icon: AiFillTwitterCircle, label: "Twitter Profile" },
     { href: "https://instagram.com", icon: AiFillInstagram, label: "Instagram Profile" },
   ];
@@ -57,13 +57,13 @@ const Footer = () => {
           </h3>
           <ul>
             <li className="mb-4 flex items-center gap-4">
-              <AiFillMail className="text-polo-500 text-lg" /> john.doe@example.com
+              <AiFillMail className="text-polo-500 text-lg" /> dagijossy18@gmail.com
             </li>
             <li className="mb-4 flex items-center gap-4">
-              <AiFillPhone className="text-polo-500 text-lg" /> +1 (555) 123-4567
+              <AiFillPhone className="text-polo-500 text-lg" /> +251924406791
             </li>
             <li className="mb-4 flex items-center gap-4">
-              <BsFillPinMapFill className="text-polo-500 text-lg" /> San Francisco, CA
+              <BsFillPinMapFill className="text-polo-500 text-lg" /> Addis Ababa, Ethiopia
             </li>
           </ul>
         </div>
