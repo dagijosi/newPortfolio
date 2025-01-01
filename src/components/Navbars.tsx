@@ -5,9 +5,12 @@ import {
   NavItems,
   NavLeft,
   NavMobile,
+  NavMobileBottom,
   NavMobileBrand,
   NavMobileItems,
+  NavRight,
 } from "../common/Navbar";
+import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -16,6 +19,18 @@ const navItems = [
   { label: "Contact", href: "#contact" },
 ];
 
+const socialLinks = [
+  {
+    href: "https://www.linkedin.com/in/dagmawi-yoseph-4b4aa6296",
+    icon: AiFillLinkedin,
+    label: "LinkedIn Profile",
+  },
+  {
+    href: "https://github.com/dagijosi",
+    icon: AiFillGithub,
+    label: "GitHub Profile",
+  },
+];
 const Navbars: React.FC = () => {
   const renderNavItems = (className: string) => (
     <NavItems className={className}>
@@ -49,6 +64,23 @@ const Navbars: React.FC = () => {
 
       {renderNavItems("text-polo-200 gap-10 font-medium ")}
 
+      <NavRight className="pr-16">
+        <div className="flex items-center gap-6 justify-center">
+          {socialLinks.map(({ href, icon: Icon, label }) => (
+            <a
+              key={href}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="text-polo-300 text-2xl transition-all duration-300 ease-in-out hover:text-polo-200 transform hover:scale-110 hover:rotate-12"
+            >
+              <Icon />
+            </a>
+          ))}
+        </div>
+      </NavRight>
+
       <NavMobile className="bg-gradient-to-br from-polo-950 to-polo-900">
         <NavMobileBrand className="bg-gradient-to-r from-polo-200 to-polo-500 bg-clip-text text-transparent text-[1.75rem] font-bold">
           <a href="/" aria-label="Go to homepage">
@@ -72,6 +104,22 @@ const Navbars: React.FC = () => {
             </li>
           ))}
         </NavMobileItems>
+        <NavMobileBottom className="bg-polo-900 border-none">
+          <div className="flex items-center gap-6 justify-end">
+            {socialLinks.map(({ href, icon: Icon, label }) => (
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="text-polo-300 text-3xl transition-all duration-300 ease-in-out hover:text-polo-200 transform hover:scale-110 hover:rotate-12"
+              >
+                <Icon />
+              </a>
+            ))}
+          </div>
+        </NavMobileBottom>
       </NavMobile>
     </Navbar>
   );
