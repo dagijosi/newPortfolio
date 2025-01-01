@@ -78,6 +78,11 @@ const Navbars: React.FC = () => {
               <Icon />
             </a>
           ))}
+          <a href="mailto:dagijossy18@gmail.com">
+            <button className="bg-gradient-to-r from-polo-400 to-polo-700 text-polo-100 px-4 py-2 rounded-md">
+              LetConnect
+            </button>
+          </a>
         </div>
       </NavRight>
 
@@ -105,7 +110,13 @@ const Navbars: React.FC = () => {
           ))}
         </NavMobileItems>
         <NavMobileBottom className="bg-polo-900 border-none">
-          <div className="flex items-center gap-6 justify-end">
+          <div className="flex items-center gap-6 justify-between">
+            <a href="mailto:dagijossy18@gmail.com">
+              <button className="bg-gradient-to-r from-polo-400 to-polo-700 text-polo-100 px-4 py-2 rounded-md">
+                LetConnect
+              </button>
+            </a>
+
             {socialLinks.map(({ href, icon: Icon, label }) => (
               <a
                 key={href}
