@@ -22,8 +22,8 @@ export const skillIconMap: Record<string, JSX.Element> = {
   "Vue.js": <FaVuejs />,
   MongoDB: <SiMongodb />,
   Firebase: <SiFirebase />,
-  Tailwind: <SiTailwindcss />,
-  Next: <SiNextdotjs />,
+  "Tailwind CSS": <SiTailwindcss />,
+  "Next.js": <SiNextdotjs />,
   HTML: <SiHtml5 />,
   JavaScript: <SiJavascript />,
   TypeScript: <SiTypescript />,
@@ -58,15 +58,15 @@ const Projects = () => {
       name: "DMovies",
       description:
         "A comprehensive movie and TV series platform with advanced search, categorization, and personalized content discovery features.",
-      skills: ["React", "Tailwind", "JavaScript", "HTML"],
-      website: "https://d-movies.vercel.app/",
-      github: "https://github.com/dagijoseph/dmovies",
+      skills: ["React", "Tailwind CSS", "HTML","JavaScript" ],
+      website: "https://new-d-movie.vercel.app/",
+      github: "https://github.com/dagijosi/NewDMovie",
     },
     {
       name: "Eco-Web",
       description:
         "A user-centric eCommerce platform with secure login, detailed product catalog, multi-currency cart system, SEO optimization, and social media integration.",
-      skills: ["Next", "Tailwind", "JavaScript", "HTML"],
+      skills: ["Next.js", "Tailwind CSS", "HTML", "JavaScript"],
       website: "https://eco-web.vercel.app/",
       github: "https://github.com/dagijoseph/eco-web",
     },
@@ -74,7 +74,7 @@ const Projects = () => {
       name: "DagiComponents",
       description:
         "DagiComponents is a modern, responsive component library that makes building beautiful React applications faster and easier. Enjoy seamless integration, extensive customization options, and optimized performance for a delightful development experience.",
-      skills: ["React", "TypeScript", "Tailwind"],
+      skills: ["React", "TypeScript", "Tailwind CSS"],
       website: "https://dagicomponets.vercel.app/",
       github: "https://github.com/dagijosi/Dagicomponets",
     },
@@ -82,7 +82,7 @@ const Projects = () => {
       name: "ET-Coffee-EUDR",
       description:
         "An application built to address the EU Deforestation Regulation (EUDR)",
-      skills: ["React", "TypeScript", "Node.js", "Tailwind", "React Saga"],
+      skills: ["React", "TypeScript", "Node.js", "Tailwind CSS", "React Saga"],
       website: "http://et-coffee-eudr.vercel.app/",
       github: "https://github.com/dagijoseph/et-coffee-eudr",
     },
@@ -90,7 +90,7 @@ const Projects = () => {
       name: "Bean Scene",
       description:
         "A coffee shop landing page designed with a modern, responsive layout, featuring smooth animations and a user-friendly interface.",
-      skills: ["React", "Tailwind", "TypeScript"],
+      skills: ["React", "Tailwind CSS", "TypeScript"],
       website: "https://coffee-landing-xi.vercel.app/",
       github: "https://github.com/dagijosi/coffeeLanding",
     },
@@ -98,7 +98,7 @@ const Projects = () => {
       name: "Tree Based Restoration Registry",
       description:
         "A platform to register and track deforested regions in Ethiopia, supporting tree-based restoration efforts with a comprehensive data management system.",
-      skills: ["React", "JavaScript", "React Query", "Tailwind", "Laravel"],
+      skills: ["React", "JavaScript", "React Query", "Tailwind CSS", "Laravel"],
       website: "https://treebaserestorationregistry.org/",
       github: "https://github.com/dagijoseph/tree-based-restoration-registry",
     },

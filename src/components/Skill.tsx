@@ -13,7 +13,7 @@ const Skill = () => {
     "Firebase",
     "Tailwind CSS",
     "Next.js",
-    "HTML5",
+    "HTML",
     "JavaScript",
     "TypeScript",
   ];
