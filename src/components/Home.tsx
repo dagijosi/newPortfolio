@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 
 const Home: React.FC = () => {
   return (
-    <div id="home" className="relative bg-gradient-to-r from-polo-950 to-polo-900 text-white flex flex-col md:flex-row justify-between items-center p-4 md:p-[2rem] md:pb-0 gap-16 overflow-x-hidden">
+    <div id="home" className="relative flex md:flex-row flex-col justify-between items-center gap-16 bg-gradient-to-r from-polo-950 to-polo-900 p-4 md:p-[2rem] md:pb-0 overflow-x-hidden text-white">
       {/* Left Section: Text */}
-      <div className="max-w-2xl mx-auto text-left">
+      <div className="mx-auto max-w-2xl text-left">
         <motion.h1
-          className="text-[2.1rem] md:text-[3.5rem] bg-gradient-to-r from-polo-200 to-polo-500 bg-clip-text text-transparent font-bold mb-6 whitespace-nowrap"
+          className="bg-clip-text bg-gradient-to-r from-polo-200 to-polo-500 mb-6 font-bold text-[2.1rem] text-transparent md:text-[3.5rem] whitespace-nowrap"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
@@ -16,7 +16,7 @@ const Home: React.FC = () => {
         </motion.h1>
 
         <motion.p
-          className="mt-4 text-[1rem] md:text-[1.2rem] leading-[1.8] text-polo-200 mb-8"
+          className="mt-4 mb-8 text-[1rem] text-polo-200 md:text-[1.2rem] leading-[1.8]"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
@@ -27,7 +27,7 @@ const Home: React.FC = () => {
         </motion.p>
 
         <motion.button
-          className="bg-gradient-to-r from-polo-500 to-polo-600 text-polo-50 py-4 px-8 rounded-lg text-lg font-semibold cursor-pointer transition-all duration-300 ease-in-out hover:transform hover:translate-y-[-2px] hover:shadow-lg"
+          className="bg-gradient-to-r from-polo-500 to-polo-600 hover:shadow-lg px-8 py-4 rounded-lg font-semibold text-polo-50 text-lg transition-all hover:translate-y-[-2px] duration-300 ease-in-out cursor-pointer hover:transform"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
@@ -41,7 +41,7 @@ const Home: React.FC = () => {
       <motion.img
         src="image/pic2.png"
         alt="A developer showcasing their work on a laptop screen"
-        className="w-full max-w-lg h-[38rem] flex-shrink-0 mt-8 md:mt-0 rounded-lg shadow-md z-10"
+        className="z-10 flex-shrink-0 shadow-md mt-8 md:mt-0 rounded-lg w-full max-w-lg h-[38rem]"
         loading="lazy"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -49,9 +49,9 @@ const Home: React.FC = () => {
       />
 
        {/* Wave Section with Framer Motion */}
-       <div className="absolute bottom-0 left-0 w-screen overflow-hidden z-0">
+       <div className="bottom-0 left-0 z-0 absolute w-screen overflow-hidden">
         <motion.div
-          className="h-52 bg-[#414d74]"
+          className="bg-[#414d74] h-52"
           animate={{
             clipPath: [
               // Approximation of the SVG wave path using polygon
