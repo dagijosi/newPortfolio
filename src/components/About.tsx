@@ -136,7 +136,7 @@ const About = () => {
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <div className="relative border-2 border-gray-700 group-hover:border-secondary rounded-2xl w-full h-[35rem] overflow-hidden transition-all">
+            <div className="relative border-2 border-gray-700 group-hover:border-secondary rounded-2xl w-full h-fit md:h-[35rem] overflow-hidden transition-all">
               <img
                 src={profilePic}
                 alt="Dagmawi Yoseph"

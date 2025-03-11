@@ -129,8 +129,7 @@ const Projects = () => {
       <motion.div
         className="mx-auto max-w-6xl"
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+        animate="visible"
         variants={containerVariants}
       >
         <motion.h2
@@ -144,6 +143,8 @@ const Projects = () => {
           {projects.slice(0, visibleCount).map((project) => (
             <motion.div
               key={project.title}
+              initial="hidden"
+              animate="visible"
               variants={itemVariants}
               className="group relative bg-gray-900 border border-gray-800 hover:border-secondary rounded-xl transition-all"
               whileHover={{
@@ -179,7 +180,7 @@ const Projects = () => {
                     <motion.span
                       key={tech}
                       initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
+                      animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: techIndex * 0.1 + 0.2 }}
                       className="bg-gray-800 hover:bg-secondary/10 px-3 py-1 border border-gray-700 rounded-full text-secondary text-sm transition-colors cursor-default"
                     >
@@ -214,17 +215,19 @@ const Projects = () => {
         </div>
 
         <motion.div className="mt-16 text-center" variants={itemVariants}>
-          <motion.button
-            className="hover:bg-secondary/10 px-8 py-3 border border-secondary rounded-lg text-secondary transition-colors"
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0 0 20px rgba(0, 255, 136, 0.2)",
-            }}
-            whileTap={{ scale: 0.95 }}
-            onClick={handleSeeMore}
-          >
-            View All Projects
-          </motion.button>
+          {visibleCount < projects.length && (
+            <motion.button
+              className="hover:bg-secondary/10 px-8 py-3 border border-secondary rounded-lg text-secondary transition-colors"
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 0 20px rgba(0, 255, 136, 0.2)",
+              }}
+              whileTap={{ scale: 0.95 }}
+              onClick={handleSeeMore}
+            >
+              View All Projects
+            </motion.button>
+          )}
         </motion.div>
       </motion.div>
     </section>

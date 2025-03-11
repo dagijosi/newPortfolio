@@ -59,21 +59,22 @@ const Footer = () => {
           </div>
         </motion.div>
 
-        {/* Navigation */}
-        <motion.div variants={itemVariants}>
-          <h3 className="mb-4 font-semibold text-white text-lg">Navigation</h3>
-          <nav className="flex flex-col gap-2">
-            {['Home', 'About', 'Projects', 'Skills', 'Contact'].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="text-gray-400 hover:text-secondary transition-colors"
-              >
-                {item}
-              </a>
-            ))}
-          </nav>
-        </motion.div>
+       {/* Navigation */}
+<motion.div variants={itemVariants}>
+  <h3 className="mb-4 font-semibold text-white text-lg">Navigation</h3>
+  <nav className="gap-2 grid grid-cols-2"> {/* Updated to use grid layout */}
+    {['Home', 'About', 'Projects', 'Skills', 'Contact'].map((item) => (
+      <a
+        key={item}
+        href={`#${item.toLowerCase()}`}
+        className="text-gray-400 hover:text-secondary transition-colors"
+      >
+        {item}
+      </a>
+    ))}
+  </nav>
+</motion.div>
+
 
         {/* Built With */}
         <motion.div variants={itemVariants}>
