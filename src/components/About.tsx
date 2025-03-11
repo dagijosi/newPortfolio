@@ -8,7 +8,6 @@ import {
   FiZap,
 } from "react-icons/fi";
 
-import profilePic from "../image/pic.png";
 
 const About = () => {
   const containerVariants = {
@@ -138,7 +137,7 @@ const About = () => {
           >
             <div className="relative border-2 border-gray-700 group-hover:border-secondary rounded-2xl w-full h-fit md:h-[35rem] overflow-hidden transition-all">
               <img
-                src={profilePic}
+                src="/image/pic.png"
                 alt="Dagmawi Yoseph"
                 className="object-cover object-top"
                 sizes="(max-width: 768px) 100vw, 50vw"

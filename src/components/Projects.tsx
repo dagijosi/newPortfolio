@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
-import imagePaths from "./Image";
 import { useState } from "react";
 
 const Projects = () => {
@@ -12,7 +11,7 @@ const Projects = () => {
       description:
         "A comprehensive movie and TV series platform with advanced search, categorization, and personalized content discovery features.",
       tech: ["React", "Tailwind CSS", "HTML", "JavaScript"],
-      image: imagePaths.find((img) => img.includes("dmovies.png")),
+      image: "/image/dmovies.png",
       github: "https://github.com/dagijosi/NewDMovie",
       demo: "https://new-d-movie.vercel.app/",
     },
@@ -21,7 +20,7 @@ const Projects = () => {
       description:
         "A user-centric eCommerce platform with secure login, detailed product catalog, multi-currency cart system, SEO optimization, and social media integration.",
       tech: ["Next.js", "Tailwind CSS", "HTML", "JavaScript"],
-      image: imagePaths.find((img) => img.includes("eco-web.png")),
+      image: "/image/eco-web.png",
       github: "https://github.com/dagijoseph/eco-web",
       demo: "https://eco-web.vercel.app/",
     },
@@ -30,7 +29,7 @@ const Projects = () => {
       description:
         "A modern, responsive component library for faster and easier React development with extensive customization options.",
       tech: ["React", "TypeScript", "Tailwind CSS"],
-      image: imagePaths.find((img) => img.includes("dagi-components.png")),
+      image: "/image/dagi-components.png",
       github: "https://github.com/dagijosi/Dagicomponets",
       demo: "https://dagicomponets.vercel.app/",
     },
@@ -39,7 +38,7 @@ const Projects = () => {
       description:
         "An application built to address the EU Deforestation Regulation (EUDR).",
       tech: ["React", "TypeScript", "Node.js", "Tailwind CSS", "React Saga"],
-      image: imagePaths.find((img) => img.includes("login.png")),
+      image: "/image/login.png",
       github: "https://github.com/dagijoseph/et-coffee-eudr",
       demo: "http://et-coffee-eudr.vercel.app/",
     },
@@ -48,7 +47,7 @@ const Projects = () => {
       description:
         "A coffee shop landing page with a modern, responsive layout and smooth animations.",
       tech: ["React", "Tailwind CSS", "TypeScript"],
-      image: imagePaths.find((img) => img.includes("bean-scene.png")),
+      image: "/image/bean-scene.png",
       github: "https://github.com/dagijosi/coffeeLanding",
       demo: "https://coffee-landing-xi.vercel.app/",
     },
@@ -57,7 +56,7 @@ const Projects = () => {
       description:
         "A platform to register and track deforested regions in Ethiopia, supporting tree-based restoration efforts.",
       tech: ["React", "JavaScript", "React Query", "Tailwind CSS", "Laravel"],
-      image: imagePaths.find((img) => img.includes("tree-restoration.png")),
+      image: "tree-restoration.png",
       github: "https://github.com/dagijoseph/tree-based-restoration-registry",
       demo: "https://treebaserestorationregistry.org/",
     },
@@ -66,7 +65,7 @@ const Projects = () => {
       description:
         "A website builder that allows users to create and customize their own websites.",
       tech: ["React", "JavaScript", "Tailwind CSS", "Next.js"],
-      image: imagePaths.find((img) => img.includes("website-builder.png")),
+      image: "/image/website-builder.png",
       github: "https://github.com/dagijosi/web-builder",
       demo: "https://web-builder-eta-eight.vercel.app/",
     },
@@ -75,7 +74,7 @@ const Projects = () => {
       description:
         "A tool for creating and customizing reusable React components.",
       tech: ["React", "JavaScript", "Tailwind CSS", "Next.js"],
-      image: imagePaths.find((img) => img.includes("component-builder.png")),
+      image: "/image/component-builder.png",
       github: "https://github.com/dagijosi/CustomComponent",
       demo: "https://custom-componet.vercel.app/",
     },
@@ -84,7 +83,7 @@ const Projects = () => {
       description:
         "A music library and player that allows users to listen to their favorite songs.",
       tech: ["React", "JavaScript", "Tailwind CSS", "Next.js"],
-      image: imagePaths.find((img) => img.includes("music-player.png")),
+      image: "music-player.png",
       github: "https://github.com/dagijosi/music-player",
       demo: "https://music-player-eta-eight.vercel.app/",
     },
