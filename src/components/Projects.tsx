@@ -39,7 +39,7 @@ const Projects = () => {
       description:
         "An application built to address the EU Deforestation Regulation (EUDR).",
       tech: ["React", "TypeScript", "Node.js", "Tailwind CSS", "React Saga"],
-      image: imagePaths.find((img) => img.includes("et-coffee-eudr.png")),
+      image: imagePaths.find((img) => img.includes("login.png")),
       github: "https://github.com/dagijoseph/et-coffee-eudr",
       demo: "http://et-coffee-eudr.vercel.app/",
     },

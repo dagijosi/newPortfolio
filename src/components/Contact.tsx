@@ -82,7 +82,7 @@ const Contact = () => {
               </div>
               <div className="flex items-center gap-3 text-gray-400">
                 <FaEnvelope className="text-secondary" />
-                <span>contact@dagmawiyoseph.com</span>
+                <span>dagijossy18@gmail.com</span>
               </div>
             </div>
           </div>

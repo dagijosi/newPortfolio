@@ -128,7 +128,7 @@ const Home: React.FC = () => {
         variants={itemVariants}
       >
         <motion.a
-          href="/projects"
+          href="#projects"
           className="flex justify-center items-center gap-2 bg-accent px-8 py-4 rounded-lg font-semibold text-gray-900 transition-colors hover:bg-accent-dark"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -150,7 +150,7 @@ const Home: React.FC = () => {
         </motion.a>
 
         <motion.a
-          href="/contact"
+          href="#contact"
           className="flex justify-center items-center gap-2 hover:bg-accent/10 px-8 py-4 border border-accent rounded-lg font-semibold text-accent transition-colors"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
