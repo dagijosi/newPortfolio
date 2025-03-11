@@ -9,14 +9,16 @@ import Skill from "./components/Skill";
 
 function App() {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Navbars />
-      <Home />
-      <About/>
-      <Projects/>
-      <Skill/>
-      <Contact/>
-      <Footer/>
+      <div className="flex-grow mx-auto mt-16 p-4 container">
+        <Home />
+        <About />
+        <Projects />
+        <Skill />
+        <Contact />
+      </div>
+      <Footer />
     </div>
   );
 }
