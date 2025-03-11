@@ -9,7 +9,7 @@ import Skill from "./components/Skill";
 
 function App() {
   return (
-    <div className="bg-gradient-to-r from-polo-950 to-polo-900">
+    <div>
       <Navbars />
       <Home />
       <About/>

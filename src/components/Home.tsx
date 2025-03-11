@@ -1,74 +1,217 @@
-import React from "react";
 import { motion } from "framer-motion";
+import {
+  FaFilePdf,
+  FaGithub,
+  FaLinkedin,
+  FaMedium,
+  FaTwitter,
+} from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
+import { TypeAnimation } from "react-type-animation";
 
+// Animation configurations
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const socialLinks = [
+  {
+    name: "GitHub",
+    url: "https://github.com/dagijosi",
+    icon: <FaGithub className="w-6 h-6" />,
+    aria: "Visit my GitHub profile",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/dagmawi-yoseph-4b4aa6296",
+    icon: <FaLinkedin className="w-6 h-6" />,
+    aria: "Connect with me on LinkedIn",
+  },
+  {
+    name: "Twitter",
+    url: "https://twitter.com/yourhandle",
+    icon: <FaTwitter className="w-6 h-6" />,
+    aria: "Follow me on Twitter",
+  },
+  {
+    name: "Medium",
+    url: "https://medium.com/@yourusername",
+    icon: <FaMedium className="w-6 h-6" />,
+    aria: "Read my articles on Medium",
+  },
+  {
+    name: "LeetCode",
+    url: "https://leetcode.com/yourprofile",
+    icon: <SiLeetcode className="w-6 h-6" />,
+    aria: "View my LeetCode solutions",
+  },
+  {
+    name: "Resume",
+    url: "/resume.pdf",
+    icon: <FaFilePdf className="w-6 h-6" />,
+    aria: "Download my resume",
+  },
+];
 const Home: React.FC = () => {
   return (
-    <div id="home" className="relative flex md:flex-row flex-col justify-between items-center gap-16 bg-gradient-to-r from-polo-950 to-polo-900 p-4 md:p-[2rem] md:pb-0 overflow-x-hidden text-white">
-      {/* Left Section: Text */}
-      <div className="mx-auto max-w-2xl text-left">
-        <motion.h1
-          className="bg-clip-text bg-gradient-to-r from-polo-200 to-polo-500 mb-6 font-bold text-[2.1rem] text-transparent md:text-[3.5rem] whitespace-nowrap"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-        >
-          Hi, I'm Dagmawi Yoseph
-        </motion.h1>
+    <motion.div
+      id="home"
+      className="flex flex-col justify-center mx-auto p-6 max-w-4xl min-h-screen"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
+      {/* Welcome Message with Typing Effect */}
+      <motion.div variants={itemVariants}>
+        <p className="mb-4 font-mono text-accent text-sm">
+          <TypeAnimation
+            sequence={["// Welcome to my digital space", 1000]}
+            cursor={false}
+            speed={40}
+          />
+        </p>
+      </motion.div>
 
-        <motion.p
-          className="mt-4 mb-8 text-[1rem] text-polo-200 md:text-[1.2rem] leading-[1.8]"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-        >
-          A passionate Full Stack Developer crafting beautiful and functional
-          web experiences. I specialize in building modern, responsive
-          applications that solve real-world problems.
-        </motion.p>
+      {/* Main Heading */}
+      <motion.h1
+        className="mb-4 font-bold text-gray-100 text-5xl md:text-7xl"
+        variants={itemVariants}
+      >
+        Dagmawi Yoseph
+      </motion.h1>
 
-        <motion.button
-          className="bg-gradient-to-r from-polo-500 to-polo-600 hover:shadow-lg px-8 py-4 rounded-lg font-semibold text-polo-50 text-lg transition-all hover:translate-y-[-2px] duration-300 ease-in-out cursor-pointer hover:transform"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          onClick={() => window.location.href = '#projects'}
-        >
-          View My Work
-        </motion.button>
-      </div>
-
-      {/* Right Section: Image */}
-      <motion.img
-        src="image/pic2.png"
-        alt="A developer showcasing their work on a laptop screen"
-        className="z-10 flex-shrink-0 shadow-md mt-8 md:mt-0 rounded-lg w-full max-w-lg h-[38rem]"
-        loading="lazy"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, delay: 0.3 }}
-      />
-
-       {/* Wave Section with Framer Motion */}
-       <div className="bottom-0 left-0 z-0 absolute w-screen overflow-hidden">
-        <motion.div
-          className="bg-[#414d74] h-52"
-          animate={{
-            clipPath: [
-              // Approximation of the SVG wave path using polygon
-              "polygon(0% 60%, 5% 55%, 10% 60%, 15% 55%, 20% 50%, 25% 55%, 30% 50%, 35% 55%, 40% 60%, 45% 55%, 50% 50%, 55% 55%, 60% 60%, 65% 55%, 70% 50%, 75% 55%, 80% 60%, 85% 55%, 90% 50%, 95% 55%, 100% 60%, 100% 100%, 0% 100%)",
-              // Second wave cycle
-              "polygon(0% 50%, 5% 45%, 10% 50%, 15% 45%, 20% 50%, 25% 45%, 30% 50%, 35% 45%, 40% 50%, 45% 45%, 50% 40%, 55% 45%, 60% 50%, 65% 45%, 70% 40%, 75% 45%, 80% 50%, 85% 45%, 90% 40%, 95% 45%, 100% 50%, 100% 100%, 0% 100%)",
-            ],
-          }}
-          transition={{
-            duration: 4,
-            ease: "easeInOut",
-            repeat: Infinity, // Loop the animation for continuous wave effect
-            repeatType: "reverse", // Make it reverse after each cycle
-          }}
+      {/* Dynamic Role Display */}
+      <motion.div
+        className="mb-6 font-mono text-secondary text-3xl md:text-5xl"
+        variants={itemVariants}
+      >
+        <TypeAnimation
+          sequence={[
+            "FullStack Developer",
+            2000,
+            "Problem Solver",
+            2000,
+            "Tech Enthusiast",
+            2000,
+          ]}
+          speed={50}
+          repeat={Infinity}
         />
-      </div>
-    </div>
+      </motion.div>
+
+      {/* Introduction Paragraph */}
+      <motion.p
+        className="mb-8 max-w-2xl text-gray-400 text-lg md:text-xl leading-relaxed"
+        variants={itemVariants}
+      >
+        I specialize in crafting robust web applications and digital
+        experiences. Currently focusing on modern solutions with{" "}
+        <span className="text-accent">Next.js</span>,
+        <span className="text-accent"> Node.js</span>, and cloud technologies.
+      </motion.p>
+
+      {/* Action Buttons */}
+      <motion.div
+        className="flex sm:flex-row flex-col gap-4"
+        variants={itemVariants}
+      >
+        <motion.a
+          href="/projects"
+          className="flex justify-center items-center gap-2 bg-accent px-8 py-4 rounded-lg font-semibold text-gray-900 transition-colors hover:bg-accent-dark"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <span>View Projects</span>
+          <svg
+            className="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M13 10V3L4 14h7v7l9-11h-7z"
+            />
+          </svg>
+        </motion.a>
+
+        <motion.a
+          href="/contact"
+          className="flex justify-center items-center gap-2 hover:bg-accent/10 px-8 py-4 border border-accent rounded-lg font-semibold text-accent transition-colors"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <span>Get in Touch</span>
+          <svg
+            className="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+            />
+          </svg>
+        </motion.a>
+      </motion.div>
+
+      {/* Social Links */}
+      <motion.div
+        className="flex flex-wrap gap-6 mt-16 text-gray-500"
+        variants={itemVariants}
+      >
+        {socialLinks.map((link) => (
+          <motion.a
+            key={link.name}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative hover:text-accent transition-colors"
+            aria-label={link.aria}
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            {link.icon}
+            <span className="-bottom-8 left-1/2 absolute bg-gray-800 opacity-0 group-hover:opacity-100 px-2 py-1 rounded-md text-white text-xs transition-opacity -translate-x-1/2 duration-200 transform">
+              {link.name}
+            </span>
+          </motion.a>
+        ))}
+      </motion.div>
+
+      {/* Scroll Indicator (optional) */}
+      {/* <motion.div
+        className="flex flex-col items-center mt-16 text-gray-500"
+        variants={itemVariants}
+      >
+        <span className="mb-2 text-sm">Explore more</span>
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5 }}
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </motion.div>
+      </motion.div> */}
+    </motion.div>
   );
 };
 

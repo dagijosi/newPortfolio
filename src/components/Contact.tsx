@@ -1,94 +1,117 @@
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FieldValues, useForm } from "react-hook-form";
 
 const Contact = () => {
-  // Intersection observer to trigger animation on view
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        when: "beforeChildren",
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
+  const onSubmit = (data: FieldValues) => {
+    // Handle form submission
+    console.log(data);
   };
 
   return (
-    <motion.section
-      ref={ref}
-      id="contact"
-      className="max-w-6xl py-24 px-6 mx-auto relative overflow-hidden"
-      variants={containerVariants}
-      initial="hidden"
-      animate={inView ? "visible" : "hidden"}
-    >
-      <h2 className="text-polo-200 text-4xl mb-12 relative inline-block">
-        Contact Me
-        <span className="absolute bottom-[-10px] left-0 w-3/5 h-0.5 bg-gradient-to-r from-polo-500 to-transparent"></span>
-      </h2>
+    <section id="contact" className="px-6 py-20 min-h-screen">
+    <div className="mx-auto max-w-6xl">
+      <motion.h2
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        className="mb-16 font-bold text-white text-4xl md:text-5xl"
+      >
+        <span className="text-secondary">#</span> Contact
+      </motion.h2>
 
-      {/* Contact Form */}
-      <motion.form className="flex flex-col gap-6 max-w-[50rem] mx-auto" variants={itemVariants}>
-        <motion.div className="col-span-1">
-          <label htmlFor="name" className="text-polo-100 block mb-2">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            className="w-full p-[1.2rem] bg-gradient-to-r from-polo-900 to-polo-800 border border-polo-700 rounded-lg text-polo-100 focus:outline-none focus:ring-2 focus:ring-polo-500"
-            placeholder="Enter your name"
-          />
-        </motion.div>
-        <motion.div className="col-span-1">
-          <label htmlFor="email" className="text-polo-100 block mb-2">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className="w-full p-[1.2rem] bg-gradient-to-r from-polo-900 to-polo-800 border border-polo-700 rounded-lg text-polo-100 focus:outline-none focus:ring-2 focus:ring-polo-500"
-            placeholder="Enter your email"
-          />
-        </motion.div>
-        <motion.div className="col-span-2">
-          <label htmlFor="message" className="text-polo-100 block mb-2">
-            Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            rows={4}
-            className="w-full p-[1.2rem] bg-gradient-to-r from-polo-900 to-polo-800 border border-polo-700 rounded-lg text-polo-100 focus:outline-none focus:ring-2 focus:ring-polo-500"
-            placeholder="Type your message here"
-          ></textarea>
-        </motion.div>
-        <motion.div className="col-span-2 text-right">
-          <button
+      <div className="items-start gap-12 grid md:grid-cols-2">
+        {/* Contact Form */}
+        <motion.form
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          onSubmit={handleSubmit(onSubmit)}
+          className="space-y-6"
+        >
+          <div>
+            <label className="block mb-2 text-gray-400">Name</label>
+            <input
+              {...register("name", { required: true })}
+              className="bg-gray-900 p-3 border border-gray-800 focus:border-secondary rounded-lg focus:outline-none w-full"
+            />
+            {errors.name && <span className="text-red-500 text-sm">This field is required</span>}
+          </div>
+
+          <div>
+            <label className="block mb-2 text-gray-400">Email</label>
+            <input
+              {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+              className="bg-gray-900 p-3 border border-gray-800 focus:border-secondary rounded-lg focus:outline-none w-full"
+            />
+            {errors.email && <span className="text-red-500 text-sm">Valid email is required</span>}
+          </div>
+
+          <div>
+            <label className="block mb-2 text-gray-400">Message</label>
+            <textarea
+              {...register("message", { required: true })}
+              rows={5}
+              className="bg-gray-900 p-3 border border-gray-800 focus:border-secondary rounded-lg focus:outline-none w-full"
+            />
+            {errors.message && <span className="text-red-500 text-sm">Message is required</span>}
+          </div>
+
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             type="submit"
-            className="bg-gradient-to-r from-polo-500 to-polo-600 text-polo-50 p-5 rounded-lg cursor-pointer transition-all duration-300 ease-in-out hover:transform hover:translate-y-[-2px] hover:shadow-lg w-full"
+            className="bg-secondary hover:bg-accent px-6 py-3 rounded-lg font-semibold text-gray-900 transition-colors"
           >
             Send Message
-          </button>
+          </motion.button>
+        </motion.form>
+
+        {/* Contact Info */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          className="space-y-8"
+        >
+          <div className="bg-gray-900 p-6 border border-gray-800 rounded-xl">
+            <h3 className="mb-4 font-semibold text-white text-xl">Get in Touch</h3>
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 text-gray-400">
+                <FaMapMarkerAlt className="text-secondary" />
+                <span>Addis Ababa, Ethiopia</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-400">
+                <FaEnvelope className="text-secondary" />
+                <span>contact@dagmawiyoseph.com</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gray-900 p-6 border border-gray-800 rounded-xl">
+            <h3 className="mb-4 font-semibold text-white text-xl">Social Links</h3>
+            <div className="flex gap-4">
+              <a
+                href="https://github.com/dagijosi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-800 hover:bg-gray-700 p-3 rounded-lg transition-colors"
+              >
+                <FaGithub className="text-gray-400 hover:text-secondary text-2xl" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/dagmawi-yoseph-4b4aa6296"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-800 hover:bg-gray-700 p-3 rounded-lg transition-colors"
+              >
+                <FaLinkedin className="text-gray-400 hover:text-secondary text-2xl" />
+              </a>
+            </div>
+          </div>
         </motion.div>
-      </motion.form>
-    </motion.section>
+      </div>
+    </div>
+  </section>
   );
 };
 
