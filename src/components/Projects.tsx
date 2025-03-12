@@ -16,13 +16,12 @@ const Projects = () => {
       demo: "https://new-d-movie.vercel.app/",
     },
     {
-      title: "Eco-Web",
-      description:
-        "A user-centric eCommerce platform with secure login, detailed product catalog, multi-currency cart system, SEO optimization, and social media integration.",
-      tech: ["Next.js", "Tailwind CSS", "HTML", "JavaScript"],
-      image: "/image/eco-web.png",
-      github: "https://github.com/dagijoseph/eco-web",
-      demo: "https://eco-web.vercel.app/",
+      title: "HR Dashboard",
+      description: "The HR Dashboard is a sleek and efficient tool for managing employee records, attendance, and performance. it streamlines HR processes with a user-friendly interface.",
+      tech: ["Next", "Tailwind CSS", "HTML", "TypeScript"],
+      image: "/image/hr-dashboard.png",
+      github: "https://github.com/dagijosi/HR-Dashboard",
+      demo: "https://tauri-hr-dashboard.vercel.app/",
     },
     {
       title: "DagiComponents",
@@ -39,8 +38,8 @@ const Projects = () => {
         "An application built to address the EU Deforestation Regulation (EUDR).",
       tech: ["React", "TypeScript", "Node.js", "Tailwind CSS", "React Saga"],
       image: "/image/login.png",
-      github: "https://github.com/dagijoseph/et-coffee-eudr",
-      demo: "http://et-coffee-eudr.vercel.app/",
+      // github: "https://github.com/dagijoseph/et-coffee-eudr",
+      // demo: "http://et-coffee-eudr.vercel.app/",
     },
     {
       title: "Bean Scene",
@@ -52,19 +51,10 @@ const Projects = () => {
       demo: "https://coffee-landing-xi.vercel.app/",
     },
     {
-      title: "Tree Based Restoration Registry",
-      description:
-        "A platform to register and track deforested regions in Ethiopia, supporting tree-based restoration efforts.",
-      tech: ["React", "JavaScript", "React Query", "Tailwind CSS", "Laravel"],
-      image: "tree-restoration.png",
-      github: "https://github.com/dagijoseph/tree-based-restoration-registry",
-      demo: "https://treebaserestorationregistry.org/",
-    },
-    {
       title: "Website Builder",
       description:
         "A website builder that allows users to create and customize their own websites.",
-      tech: ["React", "JavaScript", "Tailwind CSS", "Next.js"],
+      tech: ["React", "JavaScript", "Tailwind CSS"],
       image: "/image/website-builder.png",
       github: "https://github.com/dagijosi/web-builder",
       demo: "https://web-builder-eta-eight.vercel.app/",
@@ -73,10 +63,19 @@ const Projects = () => {
       title: "Component Builder",
       description:
         "A tool for creating and customizing reusable React components.",
-      tech: ["React", "JavaScript", "Tailwind CSS", "Next.js"],
+      tech: ["React", "JavaScript", "Tailwind CSS"],
       image: "/image/component-builder.png",
       github: "https://github.com/dagijosi/CustomComponent",
       demo: "https://custom-componet.vercel.app/",
+    },
+    {
+      title: "Tree Based Restoration Registry",
+      description:
+          "A platform to register and track deforested regions in Ethiopia, supporting tree-based restoration efforts.",
+      tech: ["React", "JavaScript", "React Query", "Tailwind CSS", "Laravel"],
+      image: "tree-restoration.png",
+      // github: "https://github.com/dagijoseph/tree-based-restoration-registry",
+      // demo: "https://treebaserestorationregistry.org/",
     },
     {
       title: "Music Library & Player",
@@ -84,8 +83,17 @@ const Projects = () => {
         "A music library and player that allows users to listen to their favorite songs.",
       tech: ["React", "JavaScript", "Tailwind CSS", "Next.js"],
       image: "music-player.png",
-      github: "https://github.com/dagijosi/music-player",
-      demo: "https://music-player-eta-eight.vercel.app/",
+      // github: "https://github.com/dagijosi/music-player",
+      // demo: "https://music-player-eta-eight.vercel.app/",
+    },
+    {
+      title: "Eco-Web",
+      description:
+          "A user-centric eCommerce platform with secure login, detailed product catalog, multi-currency cart system, SEO optimization, and social media integration.",
+      tech: ["Next.js", "Tailwind CSS", "HTML", "JavaScript"],
+      image: "/image/eco-web.png",
+      // github: "https://github.com/dagijoseph/eco-web",
+      // demo: "https://eco-web.vercel.app/",
     },
   ];
 
