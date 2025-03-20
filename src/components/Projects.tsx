@@ -17,7 +17,8 @@ const Projects = () => {
     },
     {
       title: "HR Dashboard",
-      description: "The HR Dashboard is a sleek and efficient tool for managing employee records, attendance, and performance. it streamlines HR processes with a user-friendly interface.",
+      description:
+        "The HR Dashboard is a sleek and efficient tool for managing employee records, attendance, and performance. it streamlines HR processes with a user-friendly interface.",
       tech: ["Next", "Tailwind CSS", "HTML", "TypeScript"],
       image: "/image/hr-dashboard.png",
       github: "https://github.com/dagijosi/HR-Dashboard",
@@ -33,13 +34,13 @@ const Projects = () => {
       demo: "https://dagicomponets.vercel.app/",
     },
     {
-      title: "ET-Coffee-EUDR",
+      title: "Ward Holding",
       description:
-        "An application built to address the EU Deforestation Regulation (EUDR).",
-      tech: ["React", "TypeScript", "Node.js", "Tailwind CSS", "React Saga"],
-      image: "/image/login.png",
-      // github: "https://github.com/dagijoseph/et-coffee-eudr",
-      // demo: "http://et-coffee-eudr.vercel.app/",
+        "U.S.-based global enterprise dedicated to advancing economic development in emerging markets through sustainable value-added industrialization and multiple phases of capital formation.",
+      tech: ["Next.js", "Tailwind CSS", "TypeScript"],
+      image: "/image/ward.png",
+      github: "https://github.com/dagijosi/ward-holding",
+      demo: "https://whafrica.com.ethtbrr.net/",
     },
     {
       title: "Bean Scene",
@@ -49,6 +50,15 @@ const Projects = () => {
       image: "/image/bean-scene.png",
       github: "https://github.com/dagijosi/coffeeLanding",
       demo: "https://coffee-landing-xi.vercel.app/",
+    },
+    {
+      title: "ET-Coffee-EUDR",
+      description:
+        "An application built to address the EU Deforestation Regulation (EUDR).",
+      tech: ["React", "TypeScript", "Node.js", "Tailwind CSS", "React Saga"],
+      image: "/image/login.png",
+      // github: "https://github.com/dagijoseph/et-coffee-eudr",
+      // demo: "http://et-coffee-eudr.vercel.app/",
     },
     {
       title: "Website Builder",
@@ -71,7 +81,7 @@ const Projects = () => {
     {
       title: "Tree Based Restoration Registry",
       description:
-          "A platform to register and track deforested regions in Ethiopia, supporting tree-based restoration efforts.",
+        "A platform to register and track deforested regions in Ethiopia, supporting tree-based restoration efforts.",
       tech: ["React", "JavaScript", "React Query", "Tailwind CSS", "Laravel"],
       image: "tree-restoration.png",
       // github: "https://github.com/dagijoseph/tree-based-restoration-registry",
@@ -89,7 +99,7 @@ const Projects = () => {
     {
       title: "Eco-Web",
       description:
-          "A user-centric eCommerce platform with secure login, detailed product catalog, multi-currency cart system, SEO optimization, and social media integration.",
+        "A user-centric eCommerce platform with secure login, detailed product catalog, multi-currency cart system, SEO optimization, and social media integration.",
       tech: ["Next.js", "Tailwind CSS", "HTML", "JavaScript"],
       image: "/image/eco-web.png",
       // github: "https://github.com/dagijoseph/eco-web",
