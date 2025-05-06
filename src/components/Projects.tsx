@@ -7,6 +7,14 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "react-dagis",
+      description: "A simple CLI tool to generate React starter projects with various configurations including Redux Toolkit, React Query, Zustand, and Redux Saga — in just a few seconds! Choose between TypeScript and JavaScript for your project.",
+      tech: ["React","TypeScript","Tailwind CSS","CLI", "Vite"],
+      image: "/image/template.png", // No image URL provided in the README
+      github: "https://github.com/dagijosi/dagiTemplate", // Replace with actual GitHub URL
+      demo: "https://dagi-template.vercel.app/", // No demo URL provided in the README
+    },
+    {
       title: "DMovies",
       description:
         "A comprehensive movie and TV series platform with advanced search, categorization, and personalized content discovery features.",
