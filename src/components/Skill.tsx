@@ -1,48 +1,7 @@
 import { motion } from "framer-motion";
-import { TbBrandJavascript, TbBrandReact, TbBrandNodejs } from "react-icons/tb";
-import {
-  SiNextdotjs,
-  SiTypescript,
-  SiTailwindcss,
-  SiPython,
-  SiMongodb,
-  SiPhp,
-  SiPostgresql,
-} from "react-icons/si";
-import { FaNodeJs } from "react-icons/fa";
+import { skillCategories, additionalSkills } from "../data/skills";
 
 const Skill = () => {
-  const skillCategories = [
-    {
-      title: "Frontend Mastery",
-      skills: [
-        { icon: <TbBrandReact />, name: "React", level: 95 },
-        { icon: <SiNextdotjs />, name: "Next.js", level: 90 },
-        { icon: <SiTypescript />, name: "TypeScript", level: 85 },
-        { icon: <SiTailwindcss />, name: "Tailwind CSS", level: 92 },
-        { icon: <TbBrandReact />, name: "React Styled Components", level: 88 },
-        { icon: <FaNodeJs />, name: "React Native", level: 80 },
-      ],
-    },
-    {
-      title: "Backend Expertise",
-      skills: [
-        { icon: <TbBrandNodejs />, name: "Node.js", level: 88 },
-        { icon: <SiPhp />, name: "PHP", level: 80 },
-        { icon: <SiMongodb />, name: "MongoDB", level: 82 },
-        { icon: <SiPostgresql />, name: "PostgreSQL", level: 75 },
-      ],
-    },
-    {
-      title: "Core Languages",
-      skills: [
-        { icon: <TbBrandJavascript />, name: "JavaScript", level: 95 },
-        { icon: <SiTypescript />, name: "TypeScript", level: 85 },
-        { icon: <SiPython />, name: "Python", level: 75 },
-      ],
-    },
-  ];
-
   return (
     <section
       id="skills"
@@ -81,7 +40,7 @@ const Skill = () => {
                   >
                     <div className="flex items-center gap-4">
                       <span className="text-secondary text-3xl">
-                        {skill.icon}
+                        <skill.icon />
                       </span>
                       <div className="flex-1">
                         <div className="flex justify-between mb-2">
@@ -111,14 +70,7 @@ const Skill = () => {
           whileInView={{ opacity: 1 }}
           className="gap-4 grid sm:grid-cols-2 md:grid-cols-4 mt-16"
         >
-          {[
-            "Redux",
-            "Redux-Saga",
-            "Git",
-            "REST API",
-            "PHP Laravel",
-            "Figma UI Design",
-          ].map((skill) => (
+          {additionalSkills.map((skill) => (
             <motion.div
               key={skill}
               initial={{ scale: 0.9 }}

@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaCode } from "react-icons/fa";
+import { FaCode } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
+import { socialLinks } from "../data/socials";
+
 const Footer = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -34,24 +36,19 @@ const Footer = () => {
             <FaCode className="text-secondary" /> Connect
           </h3>
           <div className="flex gap-4">
+            {socialLinks.slice(0, 3).map((link) => (
+                <a
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-secondary transition-colors"
+              >
+               <link.icon className="text-2xl" />
+              </a>
+            ))}
             <a
-              href="https://github.com/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-secondary transition-colors"
-            >
-              <FaGithub className="text-2xl" />
-            </a>
-            <a
-              href="https://linkedin.com/in/yourprofile"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-secondary transition-colors"
-            >
-              <FaLinkedin className="text-2xl" />
-            </a>
-            <a
-              href="mailto:contact@dagmawiyoseph.com"
+              href="mailto:dagijossy18@gmail.com"
               className="text-gray-400 hover:text-secondary transition-colors"
             >
               <FiMail className="text-2xl" />
@@ -81,7 +78,7 @@ const Footer = () => {
           <h3 className="mb-4 font-semibold text-white text-lg">Built With</h3>
           <div className="flex items-center gap-2 text-gray-400">
             <FaCode className="text-secondary" />
-            <span>Next.js · Tailwind · Framer Motion</span>
+            <span>React · Tailwind · Framer Motion</span>
           </div>
         </motion.div>
       </div>

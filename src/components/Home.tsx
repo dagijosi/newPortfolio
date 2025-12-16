@@ -1,13 +1,6 @@
 import { motion } from "framer-motion";
-import {
-  FaFilePdf,
-  FaGithub,
-  FaLinkedin,
-  FaMedium,
-  FaTwitter,
-} from "react-icons/fa";
-import { SiLeetcode } from "react-icons/si";
 import { TypeAnimation } from "react-type-animation";
+import { socialLinks } from "../data/socials";
 
 // Animation configurations
 const containerVariants = {
@@ -26,44 +19,6 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const socialLinks = [
-  {
-    name: "GitHub",
-    url: "https://github.com/dagijosi",
-    icon: <FaGithub className="w-6 h-6" />,
-    aria: "Visit my GitHub profile",
-  },
-  {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/dagmawi-yoseph-4b4aa6296",
-    icon: <FaLinkedin className="w-6 h-6" />,
-    aria: "Connect with me on LinkedIn",
-  },
-  {
-    name: "Twitter",
-    url: "https://twitter.com/yourhandle",
-    icon: <FaTwitter className="w-6 h-6" />,
-    aria: "Follow me on Twitter",
-  },
-  {
-    name: "Medium",
-    url: "https://medium.com/@yourusername",
-    icon: <FaMedium className="w-6 h-6" />,
-    aria: "Read my articles on Medium",
-  },
-  {
-    name: "LeetCode",
-    url: "https://leetcode.com/yourprofile",
-    icon: <SiLeetcode className="w-6 h-6" />,
-    aria: "View my LeetCode solutions",
-  },
-  {
-    name: "Resume",
-    url: "/resume.pdf",
-    icon: <FaFilePdf className="w-6 h-6" />,
-    aria: "Download my resume",
-  },
-];
 const Home: React.FC = () => {
   return (
     <motion.div
@@ -188,8 +143,8 @@ const Home: React.FC = () => {
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            {link.icon}
-            <span className="-bottom-8 left-1/2 absolute bg-gray-800 opacity-0 group-hover:opacity-100 px-2 py-1 rounded-md text-white text-xs transition-opacity -translate-x-1/2 duration-200 transform">
+            <link.icon className="w-7 h-7" />
+             <span className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
               {link.name}
             </span>
           </motion.a>

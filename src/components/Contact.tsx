@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { FieldValues, useForm } from "react-hook-form";
+import { socialLinks } from "../data/socials";
 
 const Contact = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -33,7 +34,7 @@ const Contact = () => {
             <label className="block mb-2 text-gray-400">Name</label>
             <input
               {...register("name", { required: true })}
-              className="bg-gray-900 p-3 border border-gray-800 focus:border-secondary rounded-lg focus:outline-none w-full"
+              className="bg-gray-900 p-3 border border-gray-800 focus:border-secondary rounded-lg focus:outline-none w-full text-white"
             />
             {errors.name && <span className="text-red-500 text-sm">This field is required</span>}
           </div>
@@ -42,7 +43,7 @@ const Contact = () => {
             <label className="block mb-2 text-gray-400">Email</label>
             <input
               {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
-              className="bg-gray-900 p-3 border border-gray-800 focus:border-secondary rounded-lg focus:outline-none w-full"
+              className="bg-gray-900 p-3 border border-gray-800 focus:border-secondary rounded-lg focus:outline-none w-full text-white"
             />
             {errors.email && <span className="text-red-500 text-sm">Valid email is required</span>}
           </div>
@@ -52,7 +53,7 @@ const Contact = () => {
             <textarea
               {...register("message", { required: true })}
               rows={5}
-              className="bg-gray-900 p-3 border border-gray-800 focus:border-secondary rounded-lg focus:outline-none w-full"
+              className="bg-gray-900 p-3 border border-gray-800 focus:border-secondary rounded-lg focus:outline-none w-full text-white"
             />
             {errors.message && <span className="text-red-500 text-sm">Message is required</span>}
           </div>
@@ -90,22 +91,17 @@ const Contact = () => {
           <div className="bg-gray-900 p-6 border border-gray-800 rounded-xl">
             <h3 className="mb-4 font-semibold text-white text-xl">Social Links</h3>
             <div className="flex gap-4">
-              <a
-                href="https://github.com/dagijosi"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-800 hover:bg-gray-700 p-3 rounded-lg transition-colors"
-              >
-                <FaGithub className="text-gray-400 hover:text-secondary text-2xl" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/dagmawi-yoseph-4b4aa6296"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-800 hover:bg-gray-700 p-3 rounded-lg transition-colors"
-              >
-                <FaLinkedin className="text-gray-400 hover:text-secondary text-2xl" />
-              </a>
+              {socialLinks.slice(0, 3).map((link) => (
+                   <a
+                   key={link.name}
+                   href={link.url}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="bg-gray-800 hover:bg-gray-700 p-3 rounded-lg transition-colors"
+                 >
+                   <link.icon className="text-gray-400 hover:text-secondary text-2xl" />
+                 </a>
+              ))}
             </div>
           </div>
         </motion.div>
