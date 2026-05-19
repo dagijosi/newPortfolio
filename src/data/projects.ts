@@ -10,6 +10,13 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "LoomERP",
+    description: "A comprehensive ERP & POS system for small to medium-sized businesses. Features include inventory management, sales tracking, expense management, and a multi-store storefront platform. Built with React for the dashboard and Next.js for the storefront, optimized for performance and localized for Ethiopia.",
+    tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
+    image: "/image/loomerp.png",
+    demo: "https://erp.loomaddis.com/",
+  },
+  {
     title: "react-dagis",
     description: "A simple CLI tool to generate React starter projects with various configurations including Redux Toolkit, React Query, Zustand, and Redux Saga — in just a few seconds! Choose between TypeScript and JavaScript for your project.",
     tech: ["React","TypeScript","Tailwind CSS","CLI", "Vite"],

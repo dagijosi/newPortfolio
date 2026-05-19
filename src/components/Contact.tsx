@@ -74,8 +74,8 @@ const Contact = () => {
           whileInView={{ opacity: 1, x: 0 }}
           className="space-y-8"
         >
-          <div className="bg-gray-900 p-6 border border-gray-800 rounded-xl">
-            <h3 className="mb-4 font-semibold text-white text-xl">Get in Touch</h3>
+          <div className="bg-gray-900/80 backdrop-blur-md p-6 border border-gray-800/50 rounded-xl">
+            <h3 className="mb-4 font-semibold text-white text-xl font-display">Get in Touch</h3>
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-gray-400">
                 <FaMapMarkerAlt className="text-secondary" />
@@ -88,8 +88,8 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="bg-gray-900 p-6 border border-gray-800 rounded-xl">
-            <h3 className="mb-4 font-semibold text-white text-xl">Social Links</h3>
+          <div className="bg-gray-900/80 backdrop-blur-md p-6 border border-gray-800/50 rounded-xl">
+            <h3 className="mb-4 font-semibold text-white text-xl font-display">Social Links</h3>
             <div className="flex gap-4">
               {socialLinks.slice(0, 3).map((link) => (
                    <a
@@ -97,7 +97,8 @@ const Contact = () => {
                    href={link.url}
                    target="_blank"
                    rel="noopener noreferrer"
-                   className="bg-gray-800 hover:bg-gray-700 p-3 rounded-lg transition-colors"
+                   className="bg-gray-800/50 backdrop-blur-sm hover:bg-secondary/20 p-3 rounded-lg transition-all border border-gray-700/50 hover:border-secondary/30"
+                   aria-label={link.aria}
                  >
                    <link.icon className="text-gray-400 hover:text-secondary text-2xl" />
                  </a>

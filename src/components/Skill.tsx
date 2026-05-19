@@ -23,9 +23,9 @@ const Skill = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: catIndex * 0.2 }}
-              className="bg-gray-900 p-6 border border-gray-800 hover:border-secondary rounded-xl transition-colors"
+              className="bg-gray-900/80 backdrop-blur-md p-6 border border-gray-800/50 hover:border-secondary/50 rounded-xl transition-all"
             >
-              <h3 className="mb-6 font-semibold text-white text-xl">
+              <h3 className="mb-6 font-semibold text-white text-xl font-display">
                 {category.title}
               </h3>
 
@@ -75,7 +75,7 @@ const Skill = () => {
               key={skill}
               initial={{ scale: 0.9 }}
               whileInView={{ scale: 1 }}
-              className="bg-gray-900 p-4 border border-gray-800 hover:border-secondary rounded-lg text-center transition-colors"
+              className="bg-gray-900/80 backdrop-blur-md p-4 border border-gray-800/50 hover:border-secondary/50 rounded-lg text-center transition-all"
             >
               <span className="text-gray-300">{skill}</span>
             </motion.div>

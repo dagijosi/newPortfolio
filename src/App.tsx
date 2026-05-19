@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbars />
-      <div className="flex-grow mx-auto mt-16 p-4 container">
+      <div className="container flex-grow p-4 mx-auto mt-16">
         <Home />
         <About />
         <Projects />

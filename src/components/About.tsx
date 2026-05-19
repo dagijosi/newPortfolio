@@ -62,8 +62,8 @@ const About = () => {
                   Computer Science.`}
               </p>
 
-              <div className="bg-gray-900 p-6 border border-gray-800 rounded-lg">
-                <h3 className="flex items-center gap-2 mb-4 font-semibold text-white text-lg">
+              <div className="bg-gray-900/80 backdrop-blur-md p-6 border border-gray-800/50 rounded-lg">
+                <h3 className="flex items-center gap-2 mb-4 font-semibold text-white text-lg font-display">
                   <FiZap className="text-secondary" /> What I Do
                 </h3>
                 <ul className="space-y-3">
@@ -94,8 +94,8 @@ const About = () => {
               </div>
             </div>
 
-            <div className="bg-gray-900 p-6 border border-gray-800 rounded-lg">
-              <h3 className="flex items-center gap-2 mb-4 font-semibold text-white text-lg">
+            <div className="bg-gray-900/80 backdrop-blur-md p-6 border border-gray-800/50 rounded-lg">
+              <h3 className="flex items-center gap-2 mb-4 font-semibold text-white text-lg font-display">
                 <FiCheck className="text-secondary" /> Why Work With Me?
               </h3>
               <div className="gap-4 grid sm:grid-cols-2">
@@ -183,9 +183,9 @@ const About = () => {
                 variants={itemVariants}
               >
                 <div className="top-2 left-8 z-10 absolute bg-secondary rounded-full w-4 h-4" />
-                <div className="bg-gray-900 p-6 border border-gray-800 rounded-lg">
+                <div className="bg-gray-900/80 backdrop-blur-md p-6 border border-gray-800/50 rounded-lg">
                   <p className="mb-2 text-secondary text-sm">{item.year}</p>
-                  <h4 className="font-semibold text-white text-lg">
+                  <h4 className="font-semibold text-white text-lg font-display">
                     {item.role}
                   </h4>
                   <p className="mb-3 text-gray-400">{item.company}</p>

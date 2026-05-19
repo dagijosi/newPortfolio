@@ -12,8 +12,9 @@
   --color-foreground: var(--foreground);
   --color-secondary: #7EE787;
   --color-accent: #C297FF;
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono: 'Fira Code', monospace;
 }
 
 body {

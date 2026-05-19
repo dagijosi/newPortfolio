@@ -62,10 +62,10 @@ const Projects = () => {
               initial="hidden"
               animate="visible"
               variants={itemVariants}
-              className="group relative bg-gray-900 border border-gray-800 hover:border-secondary rounded-xl transition-all"
+              className="group relative bg-gray-900/80 backdrop-blur-md border border-gray-800/50 hover:border-secondary/50 rounded-xl transition-all overflow-hidden"
               whileHover={{
                 y: -10,
-                boxShadow: "0 20px 40px -15px rgba(0, 255, 136, 0.1)",
+                boxShadow: "0 25px 50px -12px rgba(0, 255, 136, 0.15)",
               }}
               whileTap={{ scale: 0.98 }}
             >
@@ -85,11 +85,11 @@ const Projects = () => {
                 </motion.div>
               </div>
 
-              <div className="p-6">
-                <h3 className="mb-2 font-semibold text-white text-xl">
+              <div className="p-6 bg-gradient-to-br from-gray-900/50 to-gray-800/30">
+                <h3 className="mb-2 font-semibold text-white text-xl font-display">
                   {project.title}
                 </h3>
-                <p className="mb-4 text-gray-400">{project.description}</p>
+                <p className="mb-4 text-gray-400 leading-relaxed">{project.description}</p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map((tech, techIndex) => (
@@ -98,7 +98,7 @@ const Projects = () => {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: techIndex * 0.1 + 0.2 }}
-                      className="bg-gray-800 hover:bg-secondary/10 px-3 py-1 border border-gray-700 rounded-full text-secondary text-sm transition-colors cursor-default"
+                      className="bg-gray-800/50 backdrop-blur-sm hover:bg-secondary/20 px-3 py-1 border border-gray-700/50 hover:border-secondary/30 rounded-full text-secondary text-sm transition-all cursor-default"
                     >
                       {tech}
                     </motion.span>
@@ -110,8 +110,9 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-400 hover:text-secondary transition-colors"
+                    className="flex items-center gap-2 text-gray-400 hover:text-secondary transition-colors group-hover:text-secondary"
                     whileHover={{ x: 5 }}
+                    aria-label={`View ${project.title} source code on GitHub`}
                   >
                     <FiGithub /> Code
                   </motion.a>
@@ -119,8 +120,9 @@ const Projects = () => {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-400 hover:text-secondary transition-colors"
+                    className="flex items-center gap-2 text-gray-400 hover:text-secondary transition-colors group-hover:text-secondary"
                     whileHover={{ x: 5 }}
+                    aria-label={`View ${project.title} live demo`}
                   >
                     <FiExternalLink /> Demo
                   </motion.a>
