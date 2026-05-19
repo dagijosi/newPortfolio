@@ -157,6 +157,16 @@ const About = () => {
           <div className="before:left-8 before:absolute relative space-y-8 before:bg-gray-800 before:w-0.5 before:h-full">
             {[
               {
+                year: "Sep 2025 - Present",
+                role: "Senior Frontend Developer",
+                company: "Loom",
+                achievements: [
+                  "Leading frontend development for ERP & POS systems",
+                  "Building scalable React and Next.js applications",
+                  "Implementing modern UI/UX patterns and performance optimizations",
+                ],
+              },
+              {
                 year: "Feb 2024 - Present",
                 role: "Full-Stack Web Developer",
                 company: "Echnoserve",
