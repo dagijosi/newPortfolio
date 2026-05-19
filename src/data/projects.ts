@@ -17,6 +17,13 @@ export const projects: Project[] = [
     demo: "https://erp.loomaddis.com/",
   },
   {
+    title: "Kalado Coffee",
+    description: "A complete ecommerce platform for selling coffee products online. Features include product catalog, shopping cart, checkout functionality, and a responsive user-friendly interface designed for optimal customer experience.",
+    tech: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+    image: "/image/kalado-coffee.png",
+    demo: "https://kalado-coffee.vercel.app/",
+  },
+  {
     title: "react-dagis",
     description: "A simple CLI tool to generate React starter projects with various configurations including Redux Toolkit, React Query, Zustand, and Redux Saga — in just a few seconds! Choose between TypeScript and JavaScript for your project.",
     tech: ["React","TypeScript","Tailwind CSS","CLI", "Vite"],
