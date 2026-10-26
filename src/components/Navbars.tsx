@@ -1,28 +1,28 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiMenu, FiX, FiArrowRight, FiArrowUp } from "react-icons/fi";
+import { Menu, X, ArrowUpRight, FileText } from "lucide-react";
 
 const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
+  { label: "Featured", href: "#featured" },
   { label: "Projects", href: "#projects" },
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
-  { label: "Contact", href: "#contact" }
+  { label: "Contact", href: "#contact" },
 ];
 
 const Navbars: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
+  const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      setScrolled(scrollY > 50);
+      setScrolled(scrollY > 40);
 
-      // Determine active section based on scroll position
-      const sections = navItems.map(item => item.href.substring(1));
-      const scrollPosition = scrollY + 100;
+      const sections = ["hero", "featured", "projects", "about", "experience", "skills", "contact"];
+      const scrollPosition = scrollY + 140;
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -35,217 +35,152 @@ const Navbars: React.FC = () => {
         }
       }
 
-      // Reset to home if at very top of page
-      if (scrollY === 0) {
-        setActiveSection("home");
+      if (scrollY < 80) {
+        setActiveSection("hero");
       }
     };
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const menuVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { staggerChildren: 0.1, delayChildren: 0.2 }
-    }
-  };
-
   return (
-    <>
-      <motion.header
+    <motion.header
       initial={{ y: -100 }}
-      animate={{ y: 0, top: scrolled ? "16px" : "0px" }}
-      transition={{ type: "spring", stiffness: 100, damping: 20 }}
-      className={`left-0 right-0 z-50 fixed transition-all duration-500 ${
+      animate={{
+        y: 0,
+        top: scrolled ? "16px" : "0px",
+      }}
+      transition={{ type: "spring", stiffness: 120, damping: 20 }}
+      className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
         scrolled || isOpen
-          ? "bg-gray-900/95 backdrop-blur-xl border border-gray-800/50 shadow-2xl shadow-secondary/10 rounded-2xl mx-4"
-          : "bg-transparent border-transparent"
+          ? "max-w-5xl mx-4 sm:mx-6 md:mx-auto bg-charcoal-900/95 backdrop-blur-xl border border-surface-border shadow-2xl rounded-2xl"
+          : "max-w-6xl mx-auto bg-transparent border-transparent"
       }`}
     >
-      <nav className="container px-4 mx-auto sm:px-6 lg:px-8">
+      <nav className="px-5 sm:px-7">
         <motion.div
           className="flex items-center justify-between"
-          animate={{ height: scrolled ? "64px" : "80px" }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
+          animate={{ height: scrolled ? "60px" : "80px" }}
+          transition={{ duration: 0.25, ease: "easeInOut" }}
         >
-          {/* Logo */}
-          <motion.a
-            href="#home"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            animate={{ scale: scrolled ? 0.9 : 1 }}
-            transition={{ duration: 0.3 }}
-            className="flex items-center gap-3 group"
-            aria-label="Dagmawi Yoseph - Portfolio"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-              setActiveSection("home");
-            }}
+          {/* Logo / Monogram */}
+          <a
+            href="#hero"
+            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight rounded-lg"
+            aria-label="Dagmawi Yoseph - Home"
           >
-            <div className="relative">
-              <motion.div
-                className="absolute inset-0 transition-opacity rounded-lg opacity-0 bg-secondary/20 blur-lg group-hover:opacity-100"
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
-              <div className="relative p-2 rounded-lg bg-gradient-to-br from-secondary to-accent">
-                <span className="text-xl font-bold text-gray-900 font-display">DY</span>
-              </div>
+            <div className="w-8 h-8 rounded-md bg-navy border border-navy-border flex items-center justify-center font-display font-semibold text-text-primary text-xs group-hover:border-slate-500 transition-colors">
+              DY
             </div>
-            <div className="hidden sm:block">
-              <span className="text-lg font-bold text-white font-display">Dagmawi</span>
-              <span className="ml-1 text-lg font-bold text-secondary font-display">Yoseph</span>
+            <div className="flex flex-col">
+              <span className="font-display font-semibold text-text-primary text-sm tracking-tight leading-tight group-hover:text-white transition-colors">
+                Dagmawi Yoseph
+              </span>
+              <span className="text-[10px] text-text-muted font-mono leading-none mt-0.5">
+                Senior Frontend & Full Stack
+              </span>
             </div>
-          </motion.a>
+          </a>
 
-          {/* Desktop Menu */}
-          <motion.ul
-            className="items-center hidden gap-1 md:flex"
-            animate={{ scale: scrolled ? 0.9 : 1 }}
-            transition={{ duration: 0.3 }}
-          >
-            {navItems.map(({ label, href }) => {
-              const isActive = activeSection === href.substring(1);
+          {/* Desktop Navigation Links */}
+          <ul className="hidden md:flex items-center gap-1">
+            {navItems.map((item) => {
+              const isActive = activeSection === item.href.substring(1);
               return (
-                <motion.li key={href}>
-                  <motion.a
-                    href={href}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`relative px-5 py-2.5 transition-colors font-medium group ${
-                      isActive ? "text-white" : "text-gray-300 hover:text-white"
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    className={`text-xs font-medium px-3.5 py-1.5 rounded-lg transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-highlight ${
+                      isActive
+                        ? "bg-navy text-text-primary font-semibold border border-navy-border shadow-xs"
+                        : "text-text-secondary hover:text-text-primary hover:bg-surface-elevated/70"
                     }`}
                   >
-                    {label}
-                    <motion.span
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-secondary to-accent rounded-full"
-                      initial={{ scaleX: 0 }}
-                      animate={{ scaleX: isActive ? 1 : 0 }}
-                      whileHover={{ scaleX: 1 }}
-                      transition={{ duration: 0.3 }}
-                    />
-                    <motion.div
-                      className="absolute inset-0 transition-opacity rounded-lg opacity-0 bg-secondary/10 group-hover:opacity-100"
-                      animate={{ opacity: isActive ? 1 : 0 }}
-                    />
-                  </motion.a>
-                </motion.li>
+                    {item.label}
+                  </a>
+                </li>
               );
             })}
-          </motion.ul>
+          </ul>
 
-          {/* CTA Button - Desktop */}
-          <motion.a
-            href="#contact"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            animate={{ scale: scrolled ? 0.9 : 1 }}
-            transition={{ duration: 0.3 }}
-            className="hidden md:flex items-center gap-2 bg-gradient-to-r from-secondary to-accent px-6 py-2.5 rounded-lg font-semibold text-gray-900 transition-all hover:shadow-lg hover:shadow-secondary/25"
-          >
-            Let's Talk
-            <FiArrowRight className="w-4 h-4" />
-          </motion.a>
-
-          {/* Mobile Menu Button */}
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            animate={{ scale: scrolled ? 0.9 : 1 }}
-            transition={{ duration: 0.3 }}
-            className="relative p-3 text-gray-300 transition-colors md:hidden hover:text-white"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-            aria-expanded={isOpen}
-          >
-            <motion.div
-              animate={isOpen ? { rotate: 180 } : { rotate: 0 }}
-              transition={{ duration: 0.3 }}
+          {/* Action Buttons */}
+          <div className="hidden md:flex items-center gap-2.5">
+            <a
+              href="/Dagmawi_Yoseph_CV_main.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-xs text-text-secondary hover:text-text-primary px-3 py-1.5 rounded-md border border-surface-border hover:border-surface-border-hover transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-highlight"
             >
-              {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-            </motion.div>
-          </motion.button>
+              <FileText className="w-3.5 h-3.5" />
+              <span>Resume</span>
+            </a>
+            <a
+              href="#contact"
+              className="flex items-center gap-1.5 text-xs font-medium bg-text-primary text-charcoal-950 px-3.5 py-1.5 rounded-md hover:bg-white transition-colors shadow-xs focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight"
+            >
+              <span>Contact</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
+          </div>
+
+          {/* Mobile Hamburger Toggle */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+            className="md:hidden p-2 text-text-secondary hover:text-text-primary rounded-md border border-surface-border hover:bg-surface-card transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight"
+          >
+            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </motion.div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Dropdown */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="overflow-hidden border-t md:hidden border-gray-800/50"
+              transition={{ duration: 0.2 }}
+              className="md:hidden border-t border-surface-border py-4"
             >
-              <div className="py-6 space-y-2">
-                {navItems.map(({ label, href }, index) => {
-                  const isActive = activeSection === href.substring(1);
-                  return (
-                    <motion.a
-                      key={href}
-                      href={href}
-                      onClick={() => setIsOpen(false)}
-                      variants={menuVariants}
-                      initial="hidden"
-                      animate="visible"
-                      custom={index}
-                      className={`flex items-center justify-between px-4 py-4 rounded-xl transition-all group ${
-                        isActive
-                          ? "text-white bg-secondary/20 border border-secondary/30"
-                          : "text-gray-300 hover:text-white hover:bg-gray-800/50"
-                      }`}
-                    >
-                      <span className="font-medium">{label}</span>
-                      <motion.div
-                        className="transition-opacity opacity-0 group-hover:opacity-100"
-                        whileHover={{ x: 5 }}
-                      >
-                        <FiArrowRight className="text-secondary" />
-                      </motion.div>
-                    </motion.a>
-                  );
-                })}
-                <motion.a
-                  href="#contact"
-                  onClick={() => setIsOpen(false)}
-                  variants={menuVariants}
-                  initial="hidden"
-                  animate="visible"
-                  custom={navItems.length}
-                  className="flex items-center justify-center gap-2 px-6 py-4 font-semibold text-gray-900 transition-all bg-gradient-to-r from-secondary to-accent rounded-xl hover:shadow-lg"
-                >
-                  Let's Talk
-                  <FiArrowRight className="w-4 h-4" />
-                </motion.a>
+              <div className="flex flex-col gap-1.5">
+                {navItems.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="px-3 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-surface-elevated rounded-md transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+                <div className="pt-3 mt-2 border-t border-surface-border flex flex-col gap-2">
+                  <a
+                    href="/Dagmawi_Yoseph_CV_main.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 py-2 text-sm text-text-secondary hover:text-text-primary border border-surface-border rounded-md"
+                  >
+                    <FileText className="w-4 h-4" />
+                    <span>Resume (PDF)</span>
+                  </a>
+                  <a
+                    href="#contact"
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center justify-center gap-1.5 py-2 text-sm font-medium bg-text-primary text-charcoal-950 rounded-md"
+                  >
+                    <span>Contact</span>
+                    <ArrowUpRight className="w-4 h-4" />
+                  </a>
+                </div>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </nav>
     </motion.header>
-
-    {/* Back to Top Button */}
-    <AnimatePresence>
-      {scrolled && (
-        <motion.button
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed z-50 p-4 text-gray-900 transition-all rounded-full shadow-lg bottom-8 right-8 bg-gradient-to-r from-secondary to-accent shadow-secondary/25"
-          aria-label="Back to top"
-        >
-          <FiArrowUp className="w-6 h-6" />
-        </motion.button>
-      )}
-    </AnimatePresence>
-    </>
   );
 };
 

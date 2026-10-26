@@ -1,172 +1,143 @@
 import { motion } from "framer-motion";
-import { TypeAnimation } from "react-type-animation";
-import { socialLinks } from "../data/socials";
-
-// Animation configurations
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.3,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
+import { ArrowDown, Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 
 const Home: React.FC = () => {
   return (
-    <motion.div
-      id="home"
-      className="flex flex-col justify-center mx-auto p-6 max-w-4xl min-h-screen"
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
+    <section
+      id="hero"
+      aria-label="Introduction"
+      className="pt-28 md:pt-36 pb-20 border-b border-surface-border"
     >
-      {/* Welcome Message with Typing Effect */}
-      <motion.div variants={itemVariants}>
-        <p className="mb-4 font-mono text-accent text-sm">
-          <TypeAnimation
-            sequence={["// Welcome to my digital space", 1000]}
-            cursor={false}
-            speed={40}
-          />
-        </p>
-      </motion.div>
-
-      {/* Main Heading */}
-      <motion.h1
-        className="mb-4 font-bold text-gray-100 text-5xl md:text-7xl"
-        variants={itemVariants}
-      >
-        Dagmawi Yoseph
-      </motion.h1>
-
-      {/* Dynamic Role Display */}
-      <motion.div
-        className="mb-6 font-mono text-secondary text-3xl md:text-5xl"
-        variants={itemVariants}
-      >
-        <TypeAnimation
-          sequence={[
-            "FullStack Developer",
-            2000,
-            "Problem Solver",
-            2000,
-            "Tech Enthusiast",
-            2000,
-          ]}
-          speed={50}
-          repeat={Infinity}
-        />
-      </motion.div>
-
-      {/* Introduction Paragraph */}
-      <motion.p
-        className="mb-8 max-w-2xl text-gray-400 text-lg md:text-xl leading-relaxed"
-        variants={itemVariants}
-      >
-        I specialize in crafting robust web applications and digital
-        experiences. Currently focusing on modern solutions with{" "}
-        <span className="text-accent">Next.js</span>,
-        <span className="text-accent"> Node.js</span>, and cloud technologies.
-      </motion.p>
-
-      {/* Action Buttons */}
-      <motion.div
-        className="flex sm:flex-row flex-col gap-4"
-        variants={itemVariants}
-      >
-        <motion.a
-          href="#projects"
-          className="flex justify-center items-center gap-2 bg-accent px-8 py-4 rounded-lg font-semibold text-gray-900 transition-colors hover:bg-accent-dark"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Clean, Honest Discipline Tag - No artificial pulsing dots or glow */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="mb-6 flex items-center gap-3 text-xs font-mono text-slate-400"
         >
-          <span>View Projects</span>
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M13 10V3L4 14h7v7l9-11h-7z"
-            />
-          </svg>
-        </motion.a>
+          <span className="text-text-primary font-medium">Senior Frontend & Full Stack Developer</span>
+          <span>·</span>
+          <span>Building LoomERP & developing scalable services with NestJS</span>
+        </motion.div>
 
-        <motion.a
-          href="#contact"
-          className="flex justify-center items-center gap-2 hover:bg-accent/10 px-8 py-4 border border-accent rounded-lg font-semibold text-accent transition-colors"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+        {/* Main Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-text-primary tracking-tight max-w-4xl leading-[1.12] mb-6"
         >
-          <span>Get in Touch</span>
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-            />
-          </svg>
-        </motion.a>
-      </motion.div>
+          I build products, <br className="hidden sm:inline" />
+          <span className="text-slate-400 font-medium">not just interfaces.</span>
+        </motion.h1>
 
-      {/* Social Links */}
-      <motion.div
-        className="flex flex-wrap gap-6 mt-16 text-gray-500"
-        variants={itemVariants}
-      >
-        {socialLinks.map((link) => (
-          <motion.a
-            key={link.name}
-            href={link.url}
+        {/* Supporting Text incorporating Full-Stack direction */}
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-text-secondary text-lg sm:text-xl max-w-3xl leading-relaxed mb-10 font-sans"
+        >
+          I'm a Senior Frontend and Full Stack Developer focused on building
+          thoughtful web experiences, complex business applications, and useful
+          software products. With deep expertise in React, TypeScript, and
+          maintainable architecture, I build end-to-end systems from polished
+          client interfaces to resilient backend services with Node.js and NestJS.
+        </motion.p>
+
+        {/* Action Buttons & Secondary Links */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="flex flex-wrap items-center gap-4 mb-14"
+        >
+          <a
+            href="#featured"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-text-primary text-charcoal-950 font-semibold text-sm hover:bg-white hover:shadow-subtle transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight"
+          >
+            <span>Explore My Work</span>
+            <ArrowDown className="w-4 h-4" />
+          </a>
+
+          <a
+            href="https://github.com/dagijosi"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative hover:text-accent transition-colors"
-            aria-label={link.aria}
-            whileHover={{ scale: 1.1 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-navy hover:bg-navy-light text-text-primary font-medium text-sm border border-navy-border hover:border-slate-600 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight"
           >
-            <link.icon className="w-7 h-7" />
-             <span className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-              {link.name}
-            </span>
-          </motion.a>
-        ))}
-      </motion.div>
+            <Github className="w-4 h-4 text-text-secondary" />
+            <span>GitHub</span>
+            <ExternalLink className="w-3.5 h-3.5 text-text-muted" />
+          </a>
 
-      {/* Scroll Indicator (optional) */}
-      {/* <motion.div
-        className="flex flex-col items-center mt-16 text-gray-500"
-        variants={itemVariants}
-      >
-        <span className="mb-2 text-sm">Explore more</span>
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+          <a
+            href="https://www.linkedin.com/in/dagmawi-yoseph-4b4aa6296"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-3 rounded-lg bg-surface-card hover:bg-surface-elevated text-text-secondary hover:text-text-primary text-sm border border-surface-border transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-highlight"
+            aria-label="LinkedIn Profile"
+          >
+            <Linkedin className="w-4 h-4" />
+            <span className="hidden sm:inline">LinkedIn</span>
+          </a>
+
+          <a
+            href="mailto:Dagijossy18@gmail.com"
+            className="inline-flex items-center gap-2 px-4 py-3 rounded-lg bg-surface-card hover:bg-surface-elevated text-text-secondary hover:text-text-primary text-sm border border-surface-border transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-highlight"
+            aria-label="Send Email"
+          >
+            <Mail className="w-4 h-4" />
+            <span className="hidden sm:inline">Email</span>
+          </a>
         </motion.div>
-      </motion.div> */}
-    </motion.div>
+
+        {/* Quick Orientation Strip - Solid & Honest */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="pt-8 border-t border-surface-border grid grid-cols-2 md:grid-cols-4 gap-6"
+        >
+          <div>
+            <span className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-1">
+              Role
+            </span>
+            <p className="text-sm font-medium text-text-primary">
+              Senior Frontend & Full Stack Developer
+            </p>
+          </div>
+
+          <div>
+            <span className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-1">
+              Current Focus
+            </span>
+            <p className="text-sm font-medium text-text-primary">
+              Enterprise ERP & Backend APIs
+            </p>
+          </div>
+
+          <div>
+            <span className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-1">
+              Core Technologies
+            </span>
+            <p className="text-sm font-medium text-text-primary">
+              React · TypeScript · Node.js · NestJS
+            </p>
+          </div>
+
+          <div>
+            <span className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-1">
+              Location
+            </span>
+            <p className="text-sm font-medium text-text-primary">
+              Addis Ababa, Ethiopia
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 

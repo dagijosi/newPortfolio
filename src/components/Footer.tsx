@@ -1,97 +1,98 @@
-import { motion } from "framer-motion";
-import { FaCode } from "react-icons/fa";
-import { FiMail } from "react-icons/fi";
-import { socialLinks } from "../data/socials";
+import { ArrowUp, Github, Linkedin, Mail } from "lucide-react";
 
-const Footer = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
+const Footer: React.FC = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <footer className="bg-gray-900/50 mt-auto border-gray-800 border-t">
-    <motion.div
-      className="mx-auto px-6 py-8 container"
-      initial="hidden"
-      whileInView="visible"
-      variants={containerVariants}
-      viewport={{ once: true }}
-    >
-      <div className="gap-8 grid md:grid-cols-3 mb-8">
-        {/* Social Links */}
-        <motion.div variants={itemVariants}>
-          <h3 className="flex items-center gap-2 mb-4 font-semibold text-white text-lg">
-            <FaCode className="text-secondary" /> Connect
-          </h3>
-          <div className="flex gap-4">
-            {socialLinks.slice(0, 3).map((link) => (
-                <a
-                key={link.name}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-secondary transition-colors"
-              >
-               <link.icon className="text-2xl" />
-              </a>
-            ))}
-            <a
-              href="mailto:dagijossy18@gmail.com"
-              className="text-gray-400 hover:text-secondary transition-colors"
-            >
-              <FiMail className="text-2xl" />
-            </a>
-          </div>
-        </motion.div>
+    <footer className="py-12 bg-charcoal-950 border-t border-surface-border text-text-secondary text-xs">
+      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+        {/* Identity & Rights */}
+        <div className="flex flex-col items-center md:items-start gap-1">
+          <p className="font-display font-medium text-text-primary text-sm">
+            Dagmawi Yoseph
+          </p>
+          <p className="text-text-muted">
+            Senior Frontend & Full Stack Developer
+          </p>
+          <p className="text-[11px] text-text-muted font-mono mt-1">
+            © {new Date().getFullYear()} All rights reserved.
+          </p>
+        </div>
 
-       {/* Navigation */}
-<motion.div variants={itemVariants}>
-  <h3 className="mb-4 font-semibold text-white text-lg">Navigation</h3>
-  <nav className="gap-2 grid grid-cols-2"> {/* Updated to use grid layout */}
-    {['Home', 'About', 'Projects', 'Skills', 'Contact'].map((item) => (
-      <a
-        key={item}
-        href={`#${item.toLowerCase()}`}
-        className="text-gray-400 hover:text-secondary transition-colors"
-      >
-        {item}
-      </a>
-    ))}
-  </nav>
-</motion.div>
+        {/* Quick Nav Links */}
+        <nav className="flex items-center gap-6">
+          <a
+            href="#featured"
+            className="hover:text-text-primary transition-colors focus:outline-none"
+          >
+            Featured
+          </a>
+          <a
+            href="#projects"
+            className="hover:text-text-primary transition-colors focus:outline-none"
+          >
+            Projects
+          </a>
+          <a
+            href="#about"
+            className="hover:text-text-primary transition-colors focus:outline-none"
+          >
+            About
+          </a>
+          <a
+            href="#experience"
+            className="hover:text-text-primary transition-colors focus:outline-none"
+          >
+            Experience
+          </a>
+          <a
+            href="#contact"
+            className="hover:text-text-primary transition-colors focus:outline-none"
+          >
+            Contact
+          </a>
+        </nav>
 
-
-        {/* Built With */}
-        <motion.div variants={itemVariants}>
-          <h3 className="mb-4 font-semibold text-white text-lg">Built With</h3>
-          <div className="flex items-center gap-2 text-gray-400">
-            <FaCode className="text-secondary" />
-            <span>React · Tailwind · Framer Motion</span>
-          </div>
-        </motion.div>
+        {/* Socials & Back to Top */}
+        <div className="flex items-center gap-4">
+          <a
+            href="https://github.com/dagijosi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-md hover:bg-surface-card hover:text-text-primary transition-colors"
+            aria-label="GitHub"
+          >
+            <Github className="w-4 h-4" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/dagmawi-yoseph-4b4aa6296"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-md hover:bg-surface-card hover:text-text-primary transition-colors"
+            aria-label="LinkedIn"
+          >
+            <Linkedin className="w-4 h-4" />
+          </a>
+          <a
+            href="mailto:dagijossy18@gmail.com"
+            className="p-2 rounded-md hover:bg-surface-card hover:text-text-primary transition-colors"
+            aria-label="Email"
+          >
+            <Mail className="w-4 h-4" />
+          </a>
+          <button
+            onClick={scrollToTop}
+            className="p-2 rounded-md hover:bg-surface-card hover:text-text-primary transition-colors border border-surface-border"
+            aria-label="Back to top"
+            title="Back to top"
+          >
+            <ArrowUp className="w-4 h-4" />
+          </button>
+        </div>
       </div>
-
-      {/* Copyright */}
-      <motion.div
-        className="pt-8 border-gray-800 border-t text-gray-400 text-center"
-        variants={itemVariants}
-      >
-        © {new Date().getFullYear()} Dagmawi Yoseph. All rights reserved.
-      </motion.div>
-    </motion.div>
-  </footer>
+    </footer>
   );
 };
 

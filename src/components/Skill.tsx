@@ -1,86 +1,83 @@
-import { motion } from "framer-motion";
-import { skillCategories, additionalSkills } from "../data/skills";
+import { Code, Database, Monitor, Server, Terminal } from "lucide-react";
+import { skillGroups, SkillGroup } from "../data/skills";
 
-const Skill = () => {
+const getCategoryIcon = (category: string) => {
+  switch (category) {
+    case "Frontend Architecture":
+      return <Code className="w-4 h-4 text-slate-300" />;
+    case "Backend & Full Stack Development":
+      return <Server className="w-4 h-4 text-slate-300" />;
+    case "State Management & Form Validation":
+      return <Database className="w-4 h-4 text-slate-300" />;
+    case "Desktop & Systems Engineering":
+      return <Monitor className="w-4 h-4 text-slate-300" />;
+    default:
+      return <Terminal className="w-4 h-4 text-slate-300" />;
+  }
+};
+
+const Skill: React.FC = () => {
   return (
-    <section
-      id="skills"
-      className="px-6 py-20 border-gray-800 border-b min-h-screen"
-    >
-      <div className="mx-auto max-w-6xl">
-        <motion.h2
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="mb-16 font-bold text-white text-4xl md:text-5xl"
-        >
-          <span className="text-secondary">#</span> Technical Arsenal
-        </motion.h2>
-
-        <div className="gap-8 grid lg:grid-cols-3">
-          {skillCategories.map((category, catIndex) => (
-            <motion.div
-              key={category.title}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: catIndex * 0.2 }}
-              className="bg-gray-900/80 backdrop-blur-md p-6 border border-gray-800/50 hover:border-secondary/50 rounded-xl transition-all"
-            >
-              <h3 className="mb-6 font-semibold text-white text-xl font-display">
-                {category.title}
-              </h3>
-
-              <div className="space-y-6">
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: skillIndex * 0.1 }}
-                    className="group relative"
-                  >
-                    <div className="flex items-center gap-4">
-                      <span className="text-secondary text-3xl">
-                        <skill.icon />
-                      </span>
-                      <div className="flex-1">
-                        <div className="flex justify-between mb-2">
-                          <span className="text-gray-300">{skill.name}</span>
-                          <span className="text-secondary">{skill.level}%</span>
-                        </div>
-                        <div className="bg-gray-800 rounded-full h-2 overflow-hidden">
-                          <motion.div
-                            className="bg-gradient-to-r from-secondary to-accent h-full"
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${skill.level}%` }}
-                            transition={{ duration: 1, delay: 0.3 }}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+    <section id="skills" className="py-24 border-b border-surface-border">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Section Heading */}
+        <div className="mb-14">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-xs font-mono text-slate-400 uppercase tracking-widest">
+              Technical Capabilities
+            </span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-text-primary tracking-tight">
+            Skills & Technical Scope
+          </h2>
+          <p className="mt-3 text-text-secondary text-base max-w-2xl">
+            Technologies and engineering domains grounded in real-world application
+            development across frontend architectures, backend APIs (Node.js & NestJS), and native desktop software.
+          </p>
         </div>
 
-        {/* Additional Skills Matrix */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="gap-4 grid sm:grid-cols-2 md:grid-cols-4 mt-16"
-        >
-          {additionalSkills.map((skill) => (
-            <motion.div
-              key={skill}
-              initial={{ scale: 0.9 }}
-              whileInView={{ scale: 1 }}
-              className="bg-gray-900/80 backdrop-blur-md p-4 border border-gray-800/50 hover:border-secondary/50 rounded-lg text-center transition-all"
+        {/* Skills Categorized Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {skillGroups.map((group: SkillGroup) => (
+            <div
+              key={group.category}
+              className="p-6 sm:p-7 bg-surface-card border border-surface-border hover:border-surface-border-hover rounded-xl transition-colors shadow-xs flex flex-col justify-between"
             >
-              <span className="text-gray-300">{skill}</span>
-            </motion.div>
+              <div>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="p-2 rounded bg-navy border border-navy-border">
+                    {getCategoryIcon(group.category)}
+                  </div>
+                  <h3 className="text-lg font-display font-semibold text-text-primary">
+                    {group.category}
+                  </h3>
+                </div>
+
+                <p className="text-xs text-text-muted mb-6 leading-relaxed">
+                  {group.description}
+                </p>
+
+                <div className="space-y-2.5">
+                  {group.skills.map((skill) => (
+                    <div
+                      key={skill.name}
+                      className="p-2.5 rounded bg-surface-elevated/70 border border-surface-border flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs"
+                    >
+                      <span className="font-mono font-medium text-text-primary">
+                        {skill.name}
+                      </span>
+                      {skill.detail && (
+                        <span className="text-[11px] text-text-muted">
+                          {skill.detail}
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

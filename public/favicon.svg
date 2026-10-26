@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E2B40" />
+      <stop offset="100%" stop-color="#101724" />
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#182234" stop-opacity="0.8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Squircle Base Container -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="2" />
+
+  <!-- Subtle Inner Grid / Tech Dot Accent -->
+  <circle cx="51" cy="13" r="3" fill="#38BDF8" />
+
+  <!-- Monogram DY -->
+  <text 
+    x="31" 
+    y="42" 
+    font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Space Grotesk', 'Segoe UI', Roboto, sans-serif" 
+    font-size="26" 
+    font-weight="800" 
+    fill="#F8FAFC" 
+    letter-spacing="-1.5" 
+    text-anchor="middle"
+  >DY</text>
+</svg>
