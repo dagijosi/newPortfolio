@@ -49,6 +49,13 @@ const Projects: React.FC = () => {
                   <h3 className="text-xl font-display font-bold text-text-primary mb-2.5 group-hover:text-white transition-colors">
                     {project.title}
                   </h3>
+                  {project.differentiation && (
+                    <div className="mb-3">
+                      <span className="text-[11px] font-mono text-slate-400 bg-navy/60 px-2 py-0.5 rounded border border-navy-border inline-block">
+                        {project.differentiation}
+                      </span>
+                    </div>
+                  )}
                   <p className="text-text-secondary text-sm leading-relaxed mb-5">
                     {project.description}
                   </p>

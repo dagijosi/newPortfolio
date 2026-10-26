@@ -24,7 +24,7 @@ export interface CuratedProject {
   image: string;
   github?: string;
   demo?: string;
-  featuredHighlight?: string;
+  differentiation?: string;
 }
 
 export const featuredProjects: FeaturedProject[] = [
@@ -109,13 +109,35 @@ export const featuredProjects: FeaturedProject[] = [
 export const otherProjects: CuratedProject[] = [
   {
     id: "devos",
-    title: "DevOS — Local AI Developer Workflow Manager",
-    category: "AI & Developer Tooling",
+    title: "DevOS — Developer Productivity Workspace",
+    category: "Developer Workspace & Workflow Tool",
     description:
-      "An offline developer workflow manager integrating local LLMs to provide contextual AI assistance without external cloud APIs. Organizes tasks, maintains technical context, and automates repetitive planning routines.",
-    tech: ["React", "TypeScript", "Node.js", "Local LLMs", "Automation"],
+      "A developer productivity platform engineered to organize multi-project contexts, active sprints, technical notes, and daily tasks in one unified dashboard. Solves context fragmentation by combining sprint boards, project milestones, and structured engineering routines.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Node.js"],
+    image: "/image/devos.png",
+    differentiation: "Task & sprint productivity workspace",
+  },
+  {
+    id: "component-craft",
+    title: "Component Craft",
+    category: "In-Browser Component Sandbox & Playground",
+    description:
+      "An interactive developer playground for writing, testing, and previewing React components in the browser. Features a dual-panel IDE with embedded CodeMirror editor, in-browser Babel transpilation for instant execution, PrismJS syntax highlighting, and project zip export.",
+    tech: ["React 19", "TypeScript", "CodeMirror", "Babel Standalone", "Tailwind CSS", "JSZip"],
+    image: "/image/component-craft.png",
+    demo: "https://componet-craft.vercel.app/",
+    differentiation: "Code-first editor, compilation & live preview sandbox",
+  },
+  {
+    id: "custom-component",
+    title: "Custom Component",
+    category: "Visual UI Design-Token & Style Customizer",
+    description:
+      "A visual UI design customizer and style generator. Unlike code-first sandboxes, Custom Component provides granular visual controls—color pickers, box sizing, border radius, shadows, typography scale, and icon placements—to visually configure React components and export production-ready styled code.",
+    tech: ["React", "TypeScript", "Redux", "Tailwind CSS", "Vite"],
     image: "/image/component-builder.png",
-    featuredHighlight: "Local LLM Integration",
+    demo: "https://custom-componet.vercel.app/",
+    differentiation: "No-code visual styling & token generator",
   },
   {
     id: "kalado-coffee",
