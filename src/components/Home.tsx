@@ -10,9 +10,9 @@ const Home: React.FC = () => {
       <div className="max-w-6xl mx-auto px-6">
         {/* Clean Discipline Tag */}
         <div className="mb-6 flex items-center gap-3 text-xs font-mono text-slate-400">
-          <span className="text-text-primary font-medium">Senior Frontend & Full Stack Developer</span>
+          <span className="text-text-primary font-medium">Lead Frontend Developer @ LoomERP</span>
           <span>·</span>
-          <span>Building LoomERP & scalable systems with NestJS</span>
+          <span>Full Stack & Systems Engineer</span>
         </div>
 
         {/* Main Headline */}
@@ -23,7 +23,7 @@ const Home: React.FC = () => {
 
         {/* Supporting Text */}
         <p className="text-text-secondary text-lg sm:text-xl max-w-3xl leading-relaxed mb-10 font-sans">
-          I'm a Senior Frontend & Full Stack Developer focused on building
+          I'm a Frontend & Full Stack Developer focused on building
           thoughtful web experiences, complex business applications, and useful
           software products. With deep expertise in React, TypeScript, and
           maintainable architecture, I build end-to-end systems from polished

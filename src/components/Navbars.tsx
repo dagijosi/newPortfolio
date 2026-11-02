@@ -72,7 +72,7 @@ const Navbars: React.FC = () => {
                 Dagmawi Yoseph
               </span>
               <span className="text-[10px] text-text-muted font-mono leading-none mt-0.5">
-                Senior Frontend & Full Stack Developer
+                Frontend & Full Stack Engineer
               </span>
             </div>
           </a>

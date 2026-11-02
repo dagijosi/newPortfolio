@@ -23,7 +23,7 @@ const About: React.FC = () => {
           <div className="lg:col-span-7 space-y-6 text-text-secondary text-base sm:text-lg leading-relaxed">
             <p>
               Hi, I'm <strong className="text-text-primary font-semibold">Dagmawi Yoseph</strong>.
-              I am a Senior Frontend & Full Stack Developer with 3+ years of experience
+              I am a Frontend & Full Stack Developer with 3+ years of experience
               building production web applications, enterprise SaaS, ERP platforms, and
               developer tools.
             </p>
@@ -43,6 +43,7 @@ const About: React.FC = () => {
               Currently, I serve as Lead Frontend Developer for{" "}
               <strong className="text-text-primary font-semibold">LoomERP</strong>, and also
               work on independent systems engineering projects like{" "}
+              <strong className="text-text-primary font-semibold">Qalē</strong> (offline GPU voice-to-code engine),{" "}
               <strong className="text-text-primary font-semibold">EYTAA</strong> (Tauri 2 + Rust)
               and <strong className="text-text-primary font-semibold">DevOS</strong> (local offline
               LLM workflows).

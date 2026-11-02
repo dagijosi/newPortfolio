@@ -47,6 +47,7 @@ export const skillGroups: SkillGroup[] = [
     description: "Bridging modern web frontends with native operating system performance",
     skills: [
       { name: "Tauri 2", detail: "Desktop app architecture, IPC commands, security" },
+      { name: "Python & PyTorch (CUDA)", detail: "Local GPU inference pipelines, faster-whisper, FP16 execution" },
       { name: "Rust", detail: "Native backend bindings, file system operations" },
       { name: "SQLite", detail: "Embedded database, local indexing, SQL queries" },
       { name: "libmpv", detail: "Hardware-accelerated media rendering engine" },

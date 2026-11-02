@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
             Dagmawi Yoseph
           </p>
           <p className="text-text-muted">
-            Senior Frontend & Full Stack Developer
+            Frontend & Full Stack Engineer
           </p>
           <p className="text-[11px] text-text-muted font-mono mt-1">
             © {new Date().getFullYear()} All rights reserved.

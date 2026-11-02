@@ -1,3 +1,15 @@
+export interface ProjectScreenshot {
+  title: string;
+  image: string;
+  description?: string;
+}
+
+export interface ArchitecturePipelineStep {
+  step: string;
+  title: string;
+  description: string;
+}
+
 export interface FeaturedProject {
   id: string;
   title: string;
@@ -8,6 +20,8 @@ export interface FeaturedProject {
   period: string;
   description: string;
   image: string;
+  screenshots?: ProjectScreenshot[];
+  architecturePipeline?: ArchitecturePipelineStep[];
   liveUrl?: string;
   githubUrl?: string;
   tech: string[];
@@ -67,6 +81,112 @@ export const featuredProjects: FeaturedProject[] = [
       "Optimized client caching and indexing strategies to minimize redundant server requests in multi-branch setups.",
       "Strict TypeScript typing across hundreds of API payload contracts and complex internal UI states.",
       "High-performance storefront integration with server-rendered metadata for search engines and social sharing.",
+    ],
+  },
+  {
+    id: "qale",
+    title: "Qalē",
+    nativeTitle: "ቃሌ",
+    category: "Independent Desktop Software · Voice-to-Code AI Assistant",
+    type: "independent",
+    role: "Creator and Developer",
+    period: "2024 – Present",
+    description:
+      "A high-performance, privacy-first offline voice-to-code assistant engineered specifically for developers that converts spoken natural language directly into syntactic code, operators, and editor commands in real-time (~150–250ms). Locally accelerated on NVIDIA RTX GPUs via CUDA with FP16 compute, Qalē couples local OpenAI Whisper models with active IDE window context profiling, an AST-inspired syntax transformation engine, Butterworth DSP noise gating, and non-destructive Win32 clipboard injection with zero cloud dependencies.",
+    image: "/image/qale/dashboard_general.png",
+    githubUrl: "https://github.com/dagijosi/Qale",
+    screenshots: [
+      {
+        title: "General Settings & Activation Hub",
+        image: "/image/qale/dashboard_general.png",
+        description:
+          "Global hotkey configuration, injection mode toggles (instant clipboard vs simulated keystrokes), and non-destructive clipboard preservation settings.",
+      },
+      {
+        title: "AI & Active Context Profiles",
+        image: "/image/qale/ai_context_profiles.png",
+        description:
+          "Process-aware vocabulary biasing that inspects active IDE windows (VS Code, Terminal, Browser) for TypeScript, Python, Rust, DevOps, and Shell lexicons.",
+      },
+      {
+        title: "Voice Syntax Engine & Playground",
+        image: "/image/qale/syntax_playground.png",
+        description:
+          "Real-time speech-to-syntax testing environment verifying AST transforms (e.g., 'fat arrow' → '=>', 'camel case' → 'camelCase').",
+      },
+      {
+        title: "Technical Vocabulary & Sound-Alikes",
+        image: "/image/qale/vocabulary_presets.png",
+        description:
+          "Phonetic sound-alike mapping and Levenshtein distance correction table preventing misheard tech homophones like 'neck js' → 'Next.js'.",
+      },
+      {
+        title: "Floating Precision Hardware HUD",
+        image: "/image/qale/floating_hud.png",
+        description:
+          "Frameless, translucent floating desktop overlay rendering real-time audio waveforms, active context badges, and GPU inference latency.",
+      },
+    ],
+    architecturePipeline: [
+      {
+        step: "01",
+        title: "16kHz Audio & DSP Filter",
+        description:
+          "Mono audio capture with Butterworth 80Hz rumble cut filter, spectral noise subtraction, and dynamic RMS gating.",
+      },
+      {
+        step: "02",
+        title: "Context Window Profiler",
+        description:
+          "Inspects foreground process handle (VS Code, Terminal, Browser) to dynamically bias Whisper beam search prompt.",
+      },
+      {
+        step: "03",
+        title: "CUDA GPU Inference",
+        description:
+          "faster-whisper and CTranslate2 with FP16 compute on NVIDIA RTX GPU achieving 150–250ms real-time transcription.",
+      },
+      {
+        step: "04",
+        title: "AST & Sound-Alike Parser",
+        description:
+          "Phonetic correction, Levenshtein matching, and AST regex syntax transforms for casing, brackets, and operators.",
+      },
+      {
+        step: "05",
+        title: "Non-Destructive Paste",
+        description:
+          "Backs up clipboard buffer, pastes via Win32 API, asynchronously restores original clipboard, and renders floating HUD.",
+      },
+    ],
+    tech: [
+      "Python 3.13",
+      "PyTorch (CUDA 12.4)",
+      "OpenAI Whisper",
+      "faster-whisper",
+      "CTranslate2",
+      "SoundDevice",
+      "SciPy (DSP)",
+      "Python AST & Regex",
+      "Microsoft Edge WebView2",
+      "Win32 API (ctypes)",
+      "pynput & keyboard",
+      "HTML5 / CSS / Vanilla JS",
+    ],
+    contributions: [
+      "Architected and built an offline desktop voice-to-code dictation application in Python, PyTorch (CUDA 12.4), and OpenAI Whisper, delivering real-time code dictation at <250ms latency.",
+      "Developed an AST-inspired syntax parsing engine that maps natural developer speech to camelCase, snake_case, punctuation, and language operators across 6 programming context profiles.",
+      "Built an active context window profiler that inspects the foreground process handle to classify workflows (TypeScript/React, Python, Systems/Rust, DevOps, Shell) and guide lexicon weighting.",
+      "Designed a DSP audio processing pipeline incorporating Butterworth highpass filtering (80Hz rumble cut), spectral noise subtraction, and dynamic RMS gating to minimize Word Error Rate (WER).",
+      "Implemented non-destructive Win32 clipboard injection, preserving the developer's copied snippet while executing instantaneous code pasting.",
+      "Engineered a resident Edge WebView2 desktop settings dashboard and a frameless translucent hardware HUD for live audio waveform and latency telemetry.",
+    ],
+    technicalHighlights: [
+      "Zero-Latency Offline GPU Inference: Cut Whisper transcription latency from 1.8s (CPU baseline) down to 150–250ms using faster-whisper, CTranslate2, and FP16 compute on NVIDIA GeForce RTX GPUs.",
+      "Context-Aware Vocabulary Profiling: Dynamically inspects focused IDE processes to weight specialized lexicons (TS/React, Python/FastAPI, Rust/C++, Docker/K8s, Shell/PowerShell).",
+      "Voice-to-Code Syntax Engine: Translates spoken phrases into language primitives in real time (e.g. 'fat arrow strictly equals' → '=> ===', 'camel case fetch user profile' → 'fetchUserProfile').",
+      "100% Air-Gapped Privacy: Zero cloud egress, zero external API keys, and zero telemetry. All weights, inference graphs, and audio streams execute purely on local hardware.",
+      "Win32 System Integration: Native Windows single-instance mutex, global low-level keyboard hooks, non-blocking asynchronous audio threads, and system tray residency.",
     ],
   },
   {
