@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 
 const Home: React.FC = () => {
@@ -9,50 +8,30 @@ const Home: React.FC = () => {
       className="pt-28 md:pt-36 pb-20 border-b border-surface-border"
     >
       <div className="max-w-6xl mx-auto px-6">
-        {/* Clean, Honest Discipline Tag - No artificial pulsing dots or glow */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="mb-6 flex items-center gap-3 text-xs font-mono text-slate-400"
-        >
+        {/* Clean Discipline Tag */}
+        <div className="mb-6 flex items-center gap-3 text-xs font-mono text-slate-400">
           <span className="text-text-primary font-medium">Senior Frontend & Full Stack Developer</span>
           <span>·</span>
-          <span>Building LoomERP & developing scalable services with NestJS</span>
-        </motion.div>
+          <span>Building LoomERP & scalable systems with NestJS</span>
+        </div>
 
         {/* Main Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-text-primary tracking-tight max-w-4xl leading-[1.12] mb-6"
-        >
+        <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-text-primary tracking-tight max-w-4xl leading-[1.12] mb-6">
           I build products, <br className="hidden sm:inline" />
           <span className="text-slate-400 font-medium">not just interfaces.</span>
-        </motion.h1>
+        </h1>
 
-        {/* Supporting Text incorporating Full-Stack direction */}
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-text-secondary text-lg sm:text-xl max-w-3xl leading-relaxed mb-10 font-sans"
-        >
+        {/* Supporting Text */}
+        <p className="text-text-secondary text-lg sm:text-xl max-w-3xl leading-relaxed mb-10 font-sans">
           I'm a Senior Frontend and Full Stack Developer focused on building
           thoughtful web experiences, complex business applications, and useful
           software products. With deep expertise in React, TypeScript, and
           maintainable architecture, I build end-to-end systems from polished
           client interfaces to resilient backend services with Node.js and NestJS.
-        </motion.p>
+        </p>
 
         {/* Action Buttons & Secondary Links */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-wrap items-center gap-4 mb-14"
-        >
+        <div className="flex flex-wrap items-center gap-4 mb-14">
           <a
             href="#featured"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-text-primary text-charcoal-950 font-semibold text-sm hover:bg-white hover:shadow-subtle transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight"
@@ -91,30 +70,25 @@ const Home: React.FC = () => {
             <Mail className="w-4 h-4" />
             <span className="hidden sm:inline">Email</span>
           </a>
-        </motion.div>
+        </div>
 
-        {/* Quick Orientation Strip - Solid & Honest */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="pt-8 border-t border-surface-border grid grid-cols-2 md:grid-cols-4 gap-6"
-        >
+        {/* Quick Orientation Strip */}
+        <div className="pt-8 border-t border-surface-border grid grid-cols-2 md:grid-cols-4 gap-6">
           <div>
             <span className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-1">
-              Role
+              Experience
             </span>
             <p className="text-sm font-medium text-text-primary">
-              Senior Frontend & Full Stack Developer
+              3+ Years in Production
             </p>
           </div>
 
           <div>
             <span className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-1">
-              Current Focus
+              Current Work
             </span>
             <p className="text-sm font-medium text-text-primary">
-              Enterprise ERP & Backend APIs
+              Lead Frontend @ LoomERP
             </p>
           </div>
 
@@ -123,7 +97,7 @@ const Home: React.FC = () => {
               Core Technologies
             </span>
             <p className="text-sm font-medium text-text-primary">
-              React · TypeScript · Node.js · NestJS
+              React · TypeScript · NestJS · Node
             </p>
           </div>
 
@@ -132,10 +106,10 @@ const Home: React.FC = () => {
               Location
             </span>
             <p className="text-sm font-medium text-text-primary">
-              Addis Ababa, Ethiopia
+              Addis Ababa, Ethiopia (UTC+3)
             </p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

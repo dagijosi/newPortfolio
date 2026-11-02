@@ -163,10 +163,13 @@ const About: React.FC = () => {
                   alt="Dagmawi Yoseph portrait"
                   className="w-full h-auto object-cover object-top"
                 />
-                <div className="p-4 bg-charcoal-900 border-t border-surface-border">
+                <div className="p-3.5 bg-charcoal-900 border-t border-surface-border flex items-center justify-between">
                   <p className="text-xs font-mono text-text-muted">
-                    Dagmawi Yoseph · Frontend & Full Stack Developer
+                    Addis Ababa, Ethiopia
                   </p>
+                  <span className="text-[11px] font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-900/50 px-2 py-0.5 rounded">
+                    Available for Select Roles
+                  </span>
                 </div>
               </div>
             </div>

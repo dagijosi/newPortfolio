@@ -36,44 +36,45 @@ const Skill: React.FC = () => {
           </p>
         </div>
 
-        {/* Skills Categorized Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Skills Categorized Specification Matrix */}
+        <div className="bg-surface-card border border-surface-border rounded-xl overflow-hidden divide-y divide-surface-border shadow-card">
           {skillGroups.map((group: SkillGroup) => (
             <div
               key={group.category}
-              className="p-6 sm:p-7 bg-surface-card border border-surface-border hover:border-surface-border-hover rounded-xl transition-colors shadow-xs flex flex-col justify-between"
+              className="p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start hover:bg-surface-elevated/20 transition-colors"
             >
-              <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 rounded bg-navy border border-navy-border">
+              {/* Domain & Scope (4 cols) */}
+              <div className="lg:col-span-4 space-y-2">
+                <div className="flex items-center gap-2.5">
+                  <div className="p-1.5 rounded bg-navy border border-navy-border">
                     {getCategoryIcon(group.category)}
                   </div>
-                  <h3 className="text-lg font-display font-semibold text-text-primary">
+                  <h3 className="text-base font-display font-semibold text-text-primary">
                     {group.category}
                   </h3>
                 </div>
-
-                <p className="text-xs text-text-muted mb-6 leading-relaxed">
+                <p className="text-xs text-text-muted leading-relaxed pr-4">
                   {group.description}
                 </p>
+              </div>
 
-                <div className="space-y-2.5">
-                  {group.skills.map((skill) => (
-                    <div
-                      key={skill.name}
-                      className="p-2.5 rounded bg-surface-elevated/70 border border-surface-border flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs"
-                    >
-                      <span className="font-mono font-medium text-text-primary">
-                        {skill.name}
-                      </span>
-                      {skill.detail && (
-                        <span className="text-[11px] text-text-muted">
-                          {skill.detail}
-                        </span>
-                      )}
+              {/* Technical Capabilities (8 cols) */}
+              <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {group.skills.map((skill) => (
+                  <div
+                    key={skill.name}
+                    className="p-3 rounded-lg bg-surface-elevated/60 border border-surface-border hover:border-surface-border-hover transition-colors"
+                  >
+                    <div className="font-mono text-xs font-medium text-text-primary mb-1">
+                      {skill.name}
                     </div>
-                  ))}
-                </div>
+                    {skill.detail && (
+                      <div className="text-[11px] text-text-secondary leading-snug">
+                        {skill.detail}
+                      </div>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
           ))}

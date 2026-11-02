@@ -45,24 +45,18 @@ const Navbars: React.FC = () => {
   }, []);
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{
-        y: 0,
-        top: scrolled ? "16px" : "0px",
-      }}
-      transition={{ type: "spring", stiffness: 120, damping: 20 }}
-      className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
+    <header
+      className={`fixed left-0 right-0 z-50 transition-all duration-200 ${
         scrolled || isOpen
-          ? "max-w-5xl mx-4 sm:mx-6 md:mx-auto bg-charcoal-900/95 backdrop-blur-xl border border-surface-border shadow-2xl rounded-2xl"
-          : "max-w-6xl mx-auto bg-transparent border-transparent"
+          ? "top-3 md:top-4 max-w-5xl mx-4 sm:mx-6 md:mx-auto bg-charcoal-900/95 backdrop-blur-xl border border-surface-border shadow-2xl rounded-2xl"
+          : "top-0 max-w-6xl mx-auto bg-transparent border-transparent"
       }`}
     >
       <nav className="px-5 sm:px-7">
-        <motion.div
-          className="flex items-center justify-between"
-          animate={{ height: scrolled ? "60px" : "80px" }}
-          transition={{ duration: 0.25, ease: "easeInOut" }}
+        <div
+          className={`flex items-center justify-between transition-all duration-200 ${
+            scrolled ? "h-14 sm:h-16" : "h-18 sm:h-20"
+          }`}
         >
           {/* Logo / Monogram */}
           <a
@@ -133,7 +127,7 @@ const Navbars: React.FC = () => {
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
-        </motion.div>
+        </div>
 
         {/* Mobile Dropdown */}
         <AnimatePresence>
@@ -180,7 +174,7 @@ const Navbars: React.FC = () => {
           )}
         </AnimatePresence>
       </nav>
-    </motion.header>
+    </header>
   );
 };
 
