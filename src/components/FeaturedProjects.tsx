@@ -76,7 +76,7 @@ const FeaturedProjectCard: React.FC<{
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-xs font-medium px-4 py-2 rounded-md bg-navy hover:bg-navy-light text-text-primary border border-navy-border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight"
             >
-              <span>Visit Live Platform</span>
+              <span>{project.liveUrlLabel || "Visit Live Platform"}</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
           )}

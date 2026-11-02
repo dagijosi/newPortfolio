@@ -44,7 +44,15 @@ const About: React.FC = () => {
               <strong className="text-text-primary font-semibold">LoomERP</strong>, and also
               work on independent systems engineering projects like{" "}
               <strong className="text-text-primary font-semibold">Qalē</strong> (offline GPU voice-to-code engine),{" "}
-              <strong className="text-text-primary font-semibold">EYTAA</strong> (Tauri 2 + Rust)
+              <a
+                href="https://eytaa-landing.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-primary font-semibold hover:underline"
+              >
+                EYTAA
+              </a>{" "}
+              (Tauri 2 + Rust)
               and <strong className="text-text-primary font-semibold">DevOS</strong> (local offline
               LLM workflows).
             </p>

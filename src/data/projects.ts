@@ -23,6 +23,7 @@ export interface FeaturedProject {
   screenshots?: ProjectScreenshot[];
   architecturePipeline?: ArchitecturePipelineStep[];
   liveUrl?: string;
+  liveUrlLabel?: string;
   githubUrl?: string;
   tech: string[];
   contributions: string[];
@@ -200,6 +201,8 @@ export const featuredProjects: FeaturedProject[] = [
     description:
       "A native Windows desktop media player project focused on a refined viewing experience, local media management, playback flexibility, and a customizable interface. Designed as a modern, high-performance alternative to traditional desktop media players, EYTAA combines web-based interface precision with native system performance.",
     image: "/image/eytaa.png",
+    liveUrl: "https://eytaa-landing.vercel.app/",
+    liveUrlLabel: "View Product Site",
     tech: [
       "React",
       "TypeScript",
