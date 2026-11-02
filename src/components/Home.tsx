@@ -23,7 +23,7 @@ const Home: React.FC = () => {
 
         {/* Supporting Text */}
         <p className="text-text-secondary text-lg sm:text-xl max-w-3xl leading-relaxed mb-10 font-sans">
-          I'm a Senior Frontend and Full Stack Developer focused on building
+          I'm a Senior Frontend & Full Stack Developer focused on building
           thoughtful web experiences, complex business applications, and useful
           software products. With deep expertise in React, TypeScript, and
           maintainable architecture, I build end-to-end systems from polished

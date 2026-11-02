@@ -23,7 +23,7 @@ const About: React.FC = () => {
           <div className="lg:col-span-7 space-y-6 text-text-secondary text-base sm:text-lg leading-relaxed">
             <p>
               Hi, I'm <strong className="text-text-primary font-semibold">Dagmawi Yoseph</strong>.
-              I am a Frontend and Full-Stack Developer with 3+ years of experience
+              I am a Senior Frontend & Full Stack Developer with 3+ years of experience
               building production web applications, enterprise SaaS, ERP platforms, and
               developer tools.
             </p>
