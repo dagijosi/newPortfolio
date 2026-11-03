@@ -28,7 +28,7 @@ export const skillGroups: SkillGroup[] = [
       { name: "NestJS", detail: "Currently mastering: modular architecture, controllers, services, dependency injection" },
       { name: "Node.js & Express", detail: "RESTful API services, middleware, authentication flows" },
       { name: "Laravel & PHP", detail: "Backend workflows, data processing, routing" },
-      { name: "MySQL & PostgreSQL", detail: "Relational database modeling, indexing, schema design" },
+      { name: "PostgreSQL, MySQL & MongoDB", detail: "Relational & document database modeling, indexing, schema design" },
       { name: "REST API Design", detail: "Clean endpoint contracts, validation, status codes" },
     ],
   },

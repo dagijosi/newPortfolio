@@ -22,7 +22,7 @@ export const socialLinks = [
   },
   {
     name: "Resume",
-    url: "/resume.pdf",
+    url: "/Dagmawi_Yoseph_CV_Refined.pdf",
     label: "Download Resume (PDF)",
   },
 ];

@@ -1,4 +1,4 @@
-import { FileText, GraduationCap, Terminal, Code2, Award, Phone, Mail, MapPin } from "lucide-react";
+import { FileText, GraduationCap, Terminal, Code2, Award, Phone, Mail, MapPin, ExternalLink } from "lucide-react";
 import { education, certificates } from "../data/experience";
 
 const About: React.FC = () => {
@@ -127,32 +127,40 @@ const About: React.FC = () => {
 
               {/* AWS Certification */}
               {certificates.map((cert) => (
-                <div
+                <a
                   key={cert.title}
-                  className="p-4 rounded-lg bg-surface-card border border-surface-border flex items-start gap-3"
+                  href={cert.link || "https://www.credly.com"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 rounded-lg bg-surface-card border border-surface-border flex items-start gap-3 hover:border-slate-500 hover:bg-surface-elevated/70 transition-all group focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight"
                 >
-                  <div className="p-2 rounded bg-navy border border-navy-border text-amber-300 flex-shrink-0">
+                  <div className="p-2 rounded bg-navy border border-navy-border text-amber-300 flex-shrink-0 group-hover:border-amber-400/50 transition-colors">
                     <Award className="w-4 h-4" />
                   </div>
-                  <div>
-                    <h4 className="text-xs font-display font-semibold text-text-primary">
-                      {cert.title}
-                    </h4>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between gap-1">
+                      <h4 className="text-xs font-display font-semibold text-text-primary group-hover:text-white transition-colors truncate">
+                        {cert.title}
+                      </h4>
+                      <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-white transition-colors flex-shrink-0" />
+                    </div>
                     <p className="text-[11px] text-text-secondary mt-0.5">
                       {cert.issuer}
                     </p>
-                    <p className="text-[10px] font-mono text-emerald-400 mt-1">
-                      {cert.status}
+                    <p className="text-[10px] font-mono text-emerald-400 mt-1 flex items-center gap-1.5">
+                      <span>{cert.status}</span>
+                      <span className="text-text-muted">·</span>
+                      <span className="text-slate-400 underline decoration-slate-600">Credly verification</span>
                     </p>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
 
             {/* Resume Download Action */}
             <div className="pt-2">
               <a
-                href="/Dagmawi_Yoseph_CV_main.pdf"
+                href="/Dagmawi_Yoseph_CV_Refined.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-navy hover:bg-navy-light text-text-primary text-sm font-medium border border-navy-border hover:border-slate-500 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight"

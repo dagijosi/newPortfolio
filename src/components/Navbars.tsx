@@ -101,7 +101,7 @@ const Navbars: React.FC = () => {
           {/* Action Buttons */}
           <div className="hidden md:flex items-center gap-2.5">
             <a
-              href="/Dagmawi_Yoseph_CV_main.pdf"
+              href="/Dagmawi_Yoseph_CV_Refined.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-xs text-text-secondary hover:text-text-primary px-3 py-1.5 rounded-md border border-surface-border hover:border-surface-border-hover transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-highlight"
@@ -152,7 +152,7 @@ const Navbars: React.FC = () => {
                 ))}
                 <div className="pt-3 mt-2 border-t border-surface-border flex flex-col gap-2">
                   <a
-                    href="/Dagmawi_Yoseph_CV_main.pdf"
+                    href="/Dagmawi_Yoseph_CV_Refined.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 py-2 text-sm text-text-secondary hover:text-text-primary border border-surface-border rounded-md"
